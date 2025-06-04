@@ -199,6 +199,12 @@ instead of speech when the noun is the Natives:
 Yelling at is an action applying to one thing.
 Understand "yell at [something]",  "shout at [something]", "scream at [something]", "yell to [something]",  "shout to [something]", "scream to [something]", "yell towards [something]",  "shout towards [something]" and "scream towards [something]" as Yelling at.
 
+Check yelling at the player:
+	if Mabel is in the location of the player:
+		try yelling at Mabel instead;
+	otherwise:
+		say "Yelling at yourself is not going to you anywhere." instead;
+
 Carry out yelling at:
 	if the noun is Mabel:
 		if Mabel is asleep:
@@ -232,9 +238,9 @@ Yelling is an action applying to nothing.
 Understand "yell" and "shout" and "scream" as Yelling.
 
 Carry out yelling:	
-	if (the location of the player is not Princess room and the number of avisurite in the location of the player > 0) and (Mabel is asleep or Guard Fight is not happening) :
-		try yelling at a random avisurite that is the location of the player;
-	otherwise if the number of people in the location of the player > 0:
+	if the location of the player is not Princess room and the number of avisurite in the location of the player > 0 and (Mabel is asleep or Guard Fight is not happening) :
+		say "That probadly not a good idea, they will hear you";
+	otherwise if the number of people in the location of the player > 1:
 		if the location of Mabel is the location of the player:
 			try yelling at Mabel;
 		if cowardly avisurite is in the location of the player:
