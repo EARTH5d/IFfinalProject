@@ -5,6 +5,8 @@ Use American dialect.
 
 Release along with a website.
 Release along with the introductory postcard.
+Release along with an interpreter.
+Release along with the library card.
 Release along with the source text.
 
 
