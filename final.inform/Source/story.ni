@@ -10,6 +10,7 @@ Release along with the library card.
 The story creation year is 2025.
 The story title is "Not a Fairy Tale".
 The story author is "Casey Alton Marshall".
+The release number is 2.
 The story description is "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escape, but your pod crashes and everyone else in there has perished, leaving you alone as if in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be imprisoned, is only a few kilometers away. But it is not like you can just walk in there and get the princess. Also you have no idea how you two will be getting home."
 
 When play begins: 
@@ -372,22 +373,6 @@ An animal can be alive or dead. An animal is usually alive. An animal is usually
 carry out attacking an animal (called the creature) when the creature is dead:
 	say "[The creature] is already dead.";
 	
-instead of taking an animal:
-	if the noun is the crab:
-		If the crab is dead:
-			now the player carries the crab;
-			say "You have taken the crab." ;
-		otherwise:
-			continue the action;
-	otherwise:
-		if the Dimetrodon is dead:
-			say "This is very heavy. Maybe try pushing. Or maybe cutting it up into smaller pieces.";
-		otherwise if the Feeding the Grue is not happening:
-			say "You are going to try taking it.";
-		otherwise:
-			say "You are going to try carrying that thing alive. Sure it might be mining it would business now, but if you bother it, then it probably be more likely to eat you than [if Feeding the Grue has not happened]a[otherwise]the[end if] Grue.";
-			
-
 Section - Dimetrodoniod
 
 The Dimetrodon is a pushable between rooms animal.
@@ -405,6 +390,14 @@ Dimetrodon meat is a thing. The description of dimetrodon meat is "This is the m
 
 instead of attacking the dimetrodon when the dimetrodon is alive:
 	say "That probably is not a good idea. It will almost surely kill you."
+		
+instead of taking the Dimetrodon:
+	if the Dimetrodon is dead:
+		say "This is very heavy. Maybe try pushing. Or maybe cutting it up into smaller pieces.";
+	otherwise if the Feeding the Grue is not happening:
+		say "You are going to try taking it.";
+	otherwise:
+		say "You are going to try carrying that thing alive. Sure it might be mining it would business now, but if you bother it, then it probably be more likely to eat you than [if Feeding the Grue has not happened]a[otherwise]the[end if] Grue.";
 
 instead of pushing dimetrodon to a direction:
 	if dimetrodon is alive:
@@ -752,8 +745,8 @@ Unscrewing is an action applying to one visible thing. Understand "unscrew [some
 
 A thing can be screwable or unscrewable. A thing is usually unscrewable.
 
-Check unscrewing:
-	if the player does not have a knife:
+Check an actor unscrewing:
+	if the actor does not have a knife:
 		say "You have nothing to do that with." instead;
 	if noun is the player:
 		say "Don't you think you already have enough loose screws?" instead;
@@ -764,46 +757,43 @@ Check unscrewing:
 			say "[one of]What? What kind of sick weirdo are you? Oh, you mean with that? Well s[or]Why? s[stopping]he has enough screws loose for the both of you already. Perhaps you should be tightening some of your own metaphorical screws instead." instead;
 	otherwise if the noun is a person:
 		say "Why? [Regarding the noun][they] are a living thing, not a robot probably. Regardless, [Regarding the noun][they] probably have enough screws loose already." instead;
-		
-Carry out an actor unscrewing something:
-	if the noun is unscrewable:
+	otherwise if the noun is unscrewable:
 		if the noun is the hyperspace radio parts:
-			if actor is visible, say "That probably not a good idea, you probably need the remaining screws.";
+			if actor is visible, say "That probably not a good idea, you probably need the remaining screws." instead;
 		otherwise if the noun is the knob:
-			say "You have already unscrewed it.";
+			say "You have already unscrewed it." instead;
 		otherwise:
-			say "That does not have any screws.";
-		stop the action;
-	otherwise if the noun is hyperspace radio parts:
-		say "[refer to the actor] remove all the screws keeping the parts you need in place.";
-		if the noun is uncutted:
-			if actor is visible, say "[refer to the actor] try pulling the them out, but they are still wired in.";
-			if control panel #4 is switched on:
-				if Starset has ended and the Actor is the player:
-					say "You ask Mabel to turn off the Panel for you, as you prepare to cut the wires.";
-					try Mabel switching off panel #4;
-				otherwise if Starset has ended and the Actor is Mabel and Mabel is not visible:
-					try Mabel switching off panel #4;
-				otherwise if Starset is happening:
-					say "You reach up and switch off the Control Panel.";
-					Now control panel #4 is switched off;
-		otherwise:
-			now hyperspace radio parts is portable;
-			if the actor is the player:
-				say "You take each of the part that you need and put them in your pack.";
-			otherwise if the actor is Mabel and Mabel is visible:
-				say "Mabel takes all the parts in the pocket of her grown.";
-			silently try the actor taking the noun;
-		now noun is unscrewable;
-	otherwise if noun is knob:
-		now the knob is portable;
-		say "You unscrew the knobs of the wooden door and pocket it away in your pack.";
-		silently try taking the noun;
-		now noun is unscrewable;
-		now the wooden door is unlocked;
-		now the wooden door is not lockable;
+			say "This does not have any screws." instead;
+		
+Carry out unscrewing the knob:
+	now the knob is portable;
+	say "You unscrew the knobs of the wooden door and pocket it away in your pack.";
+	silently try taking the knob;
+	now noun is unscrewable;
+	now the wooden door is unlocked;
+	now the wooden door is not lockable;
+		
+Carry out an actor unscrewing hyperspace radio parts:
+	say "[refer to the actor] remove all the screws keeping the parts you need in place.";
+	if the hyperspace radio parts is uncutted:
+		if actor is visible, say "[refer to the actor] try pulling the them out, but they are still wired in.";
+		if control panel #4 is switched on:
+			if Starset has ended and the Actor is the player:
+				say "You ask Mabel to turn off the Panel for you, as you prepare to cut the wires.";
+				try Mabel switching off panel #4;
+			otherwise if Starset has ended and the Actor is Mabel and Mabel is not visible:
+				try Mabel switching off panel #4;
+			otherwise if Starset is happening:
+				say "You reach up and switch off the Control Panel.";
+				Now control panel #4 is switched off;
 	otherwise:
-		say "Okay, this doesn't make anysense."
+		now hyperspace radio parts is portable;
+		if the actor is the player:
+			say "You take each of the part that you need and put them in your pack.";
+		otherwise if the actor is Mabel and Mabel is visible:
+			say "Mabel takes all the parts in the pocket of her grown.";
+		silently try the actor taking the hyperspace radio parts;
+	now hyperspace radio parts is unscrewable;
 
 	
 Part - The World
@@ -828,8 +818,8 @@ The spare blaster is a plasma blaster. The Player carries spare blaster. The Des
 
 [Federation Miliitary Uniform is clothing. The player wears Federation Military Uniform. The description of Federation Military Uniform is "This is a standard blue uniform of the servemen and women of the Democratic Federation Military.";]
 
-[Does the player mean shooting something with the The blaster pistol: it is very likely.
-Does the player mean shooting something with the The spare blaster: it is likely.]
+Does the player mean shooting something with the The blaster pistol: it is very likely.
+Does the player mean shooting something with the The spare blaster: it is likely.
 [Does the player mean turning safety on The blaster pistol: it is very likely.
 Does the player mean turning safety on The spare blaster: it is likely.]
 [Does the player mean turning safety off The blaster pistol: it is very likely.
@@ -1526,13 +1516,23 @@ The Pod Interior is a room. "This was the pod you and four others used to escape
 Three Sleeping Bags are in the Pod Interior. 
 
 To say communication unit description:
-	say "This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby (Hyperspace communication consumes large amounts of power, at least compared to even things else in the pod). You would try to see if you can get in contact with other surviors, but [if starset is happening] the Princess is right there. You have to go try saving her, even if you kill yourself doing it. You know she would do the save for you[otherwise]if others did survive they probably already sent for help by now if they could. But what if everyone who survived thought that someone else would, then we all would be stuck here for a long time. [first time]Perhaps not long enough to start a new civilization of your own, hopefuly[only][end if].  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. [if Communications Housing is open]Its door is open attached to the ceiling[otherwise]it is closed[end if].";
+	say "This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby. You would try to see if you can get in contact with other surviors, but [if starset is happening] the Princess is right there. You have to go try saving her, even if you kill yourself doing it. You know she would do the save for you[otherwise]if others did survive they probably already sent for help by now if they could. But what if everyone who survived thought that someone else would, then we all would be stuck here for a long time. [first time]Perhaps not long enough to start a new civilization of your own, hopefuly[only][end if].  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. [if Communications Housing is open]Its door is open attached to the ceiling[otherwise]it is closed[end if]";
 
-The communication unit is an fixed in place open unopenable container in the Pod Interior. The description of the communication unit is "[communication unit description]". Understand "Pod's communications", "comms", "comms unit" and "pod's comms unit" as communication unit.
+The communication unit is an fixed in place open unopenable container in the Pod Interior. The description of the communication unit is "[communication unit description].". Understand "Pod's communications", "comms", "comms unit", "radio" and "pod's comms unit" as communication unit.
+
+instead of switching on the communication unit:
+	say "You switch the entire communication unit on.";
+	try switching on Communications;
+	try switching on Hyperspace Communications;
+	
+instead of switching off the communication unit:
+	say "You switch the entire communication unit off.";
+	try switching off Communications;
+	try switching off Hyperspace Communications;
 
 Communications is a fixed in place device. Communications is inside the communication unit. The description of communications is "This is the pod's communications, its hyperspace radio transmitter and receiver are both damaged. But, at least the normal radio still works. Too bad the nearest world inhabited by a radio capable civilization is lightyears away. And even then, they have yet to develop a form of practical interplanetary travel much less faster than practical light travel, so it would be both pointless and illegal to try contacting them. You could sit here and try to contact other surivies[if Starset has not ended], but you have a Princess to go try and save. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good uses[end if]." Understands "normal radio communications", "radio communications", "radio comms","normal radio" and "normal space radio" as communications. The printed name of Communications is "normal radio communications".
 
-Hyperspace communications is a fixed in place device. Hyperspace communications is inside the communication unit.  The description of Hyperspace Communications is "This is the hyperspace communications unit. It sends radio waves through hyperspace instead of, well, normal space. It is broken. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good use[if Starset has not ended] Though it would be nice if you could fix it yourself. It would certainly be nice to know that help is coming[otherwise if stealing parts has ended]. Perhaps you can try using the parts you stole to fix it and contact someone for help[end if]." Understands "hyperspace radio", "hyperspace comms" and "hyperspace radio communications" as hyperspace communications. 
+Hyperspace communications is a fixed in place device. Hyperspace communications is inside the communication unit.  The description of Hyperspace Communications is "This is the hyperspace communications unit. It sends radio waves through hyperspace instead of, well, normal space. It is broken. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good use. [if Starset has not ended]Though it would be nice if you could fix it yourself. It would certainly be nice to know that help is coming[otherwise if stealing parts has ended]Perhaps you can try using the parts you stole to fix it and contact someone for help[end if]." Understands "hyperspace radio", "hyperspace comms" and "hyperspace radio communications" as hyperspace communications. 
 
 Communications housing is a fixed in place closed openable container. Communications housing is inside the communication unit. The description of communications housing is "This is the housing for all the parts of the pod of the communication unit." The broken parts are a radio parts in communications housing. The description of broken parts is "These are the broken parts of the hyperspace radio." Working parts are a fixed in place radio parts in communications housing. The description of working parts is "These are the still working parts for the pod's communications units." Understand "broken components" as broken parts.
 Understand "Working components" as working parts .
@@ -1554,7 +1554,7 @@ Instead of cutting Broken Parts:
 	try unscrewing Broken Parts;
 	
 Instead of inserting Broken Parts into Communications Housing:
-	say "Why would you want to do them back in.";
+	say "Why would you want to put them back in.";
 
 to RadioSound:
 	say "You turn on the radio and no matter what frequency you turn it to, all you hear is static and the occasional hint of faded music from some ‘nearby’ radio capable civilization.";
@@ -1565,17 +1565,23 @@ Carry out switching on the Communications:
 Carry out switching off the Communications:
 	say "You flipped the switch and the communications unit goes silent.";
 	
+carry out listening to Communications:
+	if Communications is switched on:
+		RadioSound;
+		
+instead of listening to Communication unit:
+	try listening to Communications;
+	
 Carry out switching on the Hyperspace Communications:
-	if Communications are switched off:
-		try switching on Communications;
 	unless Hyperspace Radio Parts are inside Communications Housing:
-		say "[one of]You flip the switch back and forth, it still doesn't change a thing. You still do not hear a thing[or]You decide just for the hell of it see if it somehow magically fixed itself since the last time you checked.
-	[paragraph break]
-	Nope. It still hasn't magically fixed itself[stopping].";
-		try switching off the Hyperspace Communications;
+		say "[one of]You flip the switch back and forth, it still doesn't change a thing. You still do not hear a thing[or]You decide just for the hell of it see if it somehow magically fixed itself since the last time you checked.[paragraph break]
+Nope. It still hasn't magically fixed itself[stopping].";
 	otherwise:
 		say "You and Mabel fiddles with the dials of the control panel for some time before you two manage to get in contact with a communication operator for a Federation Space Force patrol's flag ship. You tell them what happened and they inform you that others have already contacted them and they will be there in a few hours. You and Mabel decide to get some sleep before they arrive. You are awakened in the early hours of the morring before sunset to the sounds of a space craft landing somewhere nearby. You look over at Mabel's sleeping bag and find that she has already woke up. You find her standing outside the pod's airlock. You see Federation Troop transport ship landing on top of the dunes to your right. You and Mabel climb the dunes and are greeted by five members of space force patrol including an officer as they walk down the ramp of the ship. After the army platoon that they brought with them march down the same ramp and turn towards the fort, [EndText]";
 		end the story saying "Thank you for play testing the game.";
+		
+after switching on the Hyperspace Communications:
+	silently try switching off the Hyperspace Communications;
 		
 Carry out switching off the Hyperspace Communications:
 	say "You turn it off. It literally makes no differences.";	
