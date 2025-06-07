@@ -10,10 +10,10 @@ Release along with the library card.
 The story creation year is 2025.
 The story title is "Not a Fairy Tail".
 The story author is "Casey Alton Marshall".
-The story description is "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escpace, but your pod crashed and everyone else in in there has perished, leaving you alone as you in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be enprisoned, is only a few kilometers away. But it not like you can just walk in there and get the princess. Also you hav eno idea how you are getting home."
+The story description is "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escpace, but your pod crashed and everyone else in in there has perished, leaving you alone as you in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be enprisoned, is only a few kilometers away. But it not like you can just walk in there and get the princess. Also you have no idea how you two will be getting home."
 
 When play begins: 
-	say "After coming back from a war with bewteen the Democratic Federation and the Syndicated Consortium, the Humans and the Avisurites, you were stocked to hear that an Anisurite Holdout from the war kidnapped the Crown Princess of the Federation memmber state Arkonkia. After her family pleads with both the Federation's Senate and the Consortium's Supreme Counicl to sent a fleet to get her back. Destipe being scarred by the war, and both your own and everyone else's best judgement you feeled complead to voultneer to be part of the mission to save her. Unfornataley as the ships where just aprroching the planet Arkonkian scouts tracked the Princess and her kidnappers, space pirates attack the small fleet. The good news you and a few others managed to get on in a escpace pod. The bad news that your was among many hit by the pirates' ships. This resulted in both your pod's engines and it's alcubierre drive were both badly damages. The Pod crashed apon the planet. To make mangers worse, destipe the fact you all mange to depoted the parashutes, the did not prevent the pod from ramming into the planet's surface at high speed kocking you unconsinius. When you awake, you see that you are the only one to have surived the crashed. You are on your own.";
+	say "After coming back from a war with between the Democratic Federation and the Syndicated Consortium, the Humans and the Avisurites, you were stocked to hear that an Anisurite Holdout from the war kidnapped the Crown Princess of the Federation member state Arkonkia. After her family pleads with both the Federation's Senate and the Consortium's Supreme Council to send an expedition force to rescue her. Despite being scarred by the war, and both your own and everyone else's best judgement you feel compelled to volunteer to be part of the mission to save her. Unfortunately, as the ships were just approaching the planet Arkonkian scouts tracked the Princess and her kidnappers to, space pirates attacked the small fleet. The good news you and a few others managed to get on an escape pod. The bad news is that your pod waw among many shoot by the pirates' ships. This resulted in your pod's engines and its alcubierre drive being both badly damaged. The Pod crashed upon the planet. To make matters worse, despite the fact you all manage to deploy the parachute, it didn't prevent the pod from ramming into the planet's surface at high speed knocking you unconscious. When you awake, you see that you are the only one to have survived the crash. Further more the crash broke the pod's hyperspace communications and you have no idea if any of the other pods have made it. You are on your alone.";
 	repeat with P running through people:
 		now the current hit points of P is the maximum hit points of P;	
 
@@ -53,7 +53,6 @@ Carry out flipping:
 	otherwise:
 		 try switching on the noun;
 		
-		
 Underlying relates various things to one thing. The verb to underlie means the underlying relation. The verb to be under means the underlying relation. The verb to be beneath means the underlying relation.
 
 Instead of looking under a thing which is underlaid by something (called the lost object):
@@ -77,12 +76,9 @@ Rule for deciding whether all includes the coconut-thing while taking:
 		say "You decide to avoid taking the coconut thing in that weird plant to avoid poking yourself.";
 		it does not;
 		
-
-
 Section - eating stuff
 
 the standard report eating rule is not listed in the report eating rules.
-[the block attacking rule is not listed in the check attacking rules.]
 
 to say possessive for (subject - a person):
 	if the subject is the player:
@@ -192,24 +188,20 @@ Instead of speech when the noun is Mabel:
 		say "She still fast a sleep unware that you are trying talk to her.";
 	now Did Mabel do something is true;
 		
-		
 Instead of speech when the noun is an animal:
 	say "[the noun] looks at you with a curious look.";
 		
-Instead of speech when the noun is  an avisurite:
+Instead of speech when the noun is an avisurite:
 	say "[The noun] is an emeny. It probadly not a good idea to talk to them.";
 	
 Instead of speech when the noun is the player:
-	say "There is alot of stuff that you can talk to yourself about, but you would more likely thna not already known it.";
+	say "There is alot of stuff that you can talk to yourself about, but you would more likely than not already known it.";
 	
 instead of speech when the noun is the Natives:
 	say "You can not speak there lanugue and they surelly will not known any that you or your sister can. Though it seem they are trying to tell you something. But you think they want you to [if follow the Natives is happening]follow them[otherwise]take the 'apple'[end if]. "
 	
-[Instead of speech when the noun is not a person:
-	say  "[the noun] does not want to talk to you. Mostly becuase is is inable to want to talk to you, partly becuase it is incapable of talking.";]
-	
 Yelling at is an action applying to one thing.
-Understand "yell at [something]",  "shout at [something]", "scream at [something]", "yell to [something]",  "shout to [something]", "scream to [something]", "yell towards [something]",  "shout towards [something]" and "scream towards [something]" as Yelling at.
+Understand "yell at [something]",  "shout at [something]", "scream at [something]", "holler at [something]", "yell to [something]",  "shout to [something]", "scream to [something]", "holler to [something]" as Yelling at.
 
 Check yelling at the player:
 	if Mabel is in the location of the player:
@@ -247,7 +239,7 @@ Carry out yelling at:
 		say "You yell at [the noun] nothing happens.";
 		
 Yelling is an action applying to nothing.
-Understand "yell", "shout", "scream" and "yowl" as Yelling.
+Understand "yell", "shout", "scream" and "holler" as Yelling.
 
 Carry out yelling:	
 	if the location of the player is not Princess room and the number of avisurite in the location of the player > 0 and (Mabel is asleep or Guard Fight is not happening) :
@@ -486,7 +478,7 @@ To crabMoves:
 		
 
 
-Chapter - Plasma Blaster and Shooting
+Chapter - Plasma Blaster
 
 A plasma blaster is a kind of device. A plasma blaster is usually switched on.
 
@@ -572,7 +564,6 @@ Check shooting it with:
 	if the second noun is switched on:
 		say "You tired to pull the tigger, but you can't. You remmber that you have [the second noun]'s safety on. Try 'turn off the safety of [second noun].'"instead;
 	
-
 Carry out shooting it with:
 	if noun is a person:
 		if the noun is an animal:
@@ -614,8 +605,7 @@ Carry out shooting it with:
 					try the noun shooting the player with the gun;
 			otherwise if a random chance of 2 in 3 succeeds:
 				try noun attacking the player;
-		[now hasAttack of the noun is true;]
-		
+		now hasAttack of the noun is true;
 		
 instead of shooting Wildlife with something:
 	If Feeding the Grue is happening:
@@ -628,7 +618,6 @@ instead of shooting Creatures along the shoreline with something:
 			
 Carry out an actor that is not the player shooting a person (called the target) with something:
 	if second noun is switched on:
-		[say "[actor] [one of]switch[or]toggle[or]turn[or]click[purely at random] of the safety of their blaster.";]
 		now the second noun is switched off;
 	say "Pew shiew!";
 	if the target is the player:
@@ -817,6 +806,8 @@ Chapter - Characters
 Section - Player/Mason
 
 Understands "Lietenuat Mason" and "Mason" as yourself.
+The Description of yourself is "You are Lietenuat Mason Pinoideae, a young officer of the Democratic Federation military. You are as good looking as ever."
+
 The maximum hit points of the player is 60.
 
 The player holds 20 rations and a family photo.
@@ -828,8 +819,6 @@ The multitool knife is a knife. The player holds multitool knife. The descriptio
 
 The spare blaster is a plasma blaster. The Player carries spare blaster. The Description of spare blaster is "This blaster pistol is used to belong to one of your fallen comardes."
 
-The Description of yourself is "You are Lietenuat Mason Pinoideae, a young officer of the Democratic Federation military. You are as good looking as ever."
-
 [Federation Miliitary Uniform is clothing. The player wears Federation Military Uniform. The description of Federation Military Uniform is "This is a standard blue uniform of the servemen and women of the Democratic Federation Military.";]
 
 Does the player mean shooting something with the The blaster pistol: it is very likely.
@@ -840,7 +829,6 @@ Does the player mean turning safety off The blaster pistol: it is very likely.
 Does the player mean turning safety off The spare blaster: it is likely.
 Does the player mean toggling safety The blaster pistol: it is very likely.
 Does the player mean toggling safety The spare blaster: it is likely.
-Does the player mean doing something with the coconut-thing: it is likely.
 Does the player mean doing something with the Mouth of entrance: It is very unlikely.
 
 
@@ -848,11 +836,7 @@ Section - Grue
 
 The Grue is a person. Loincloth is clothing. The Grue wears Loincloth. The Description of the Grue is "The Grue is cowarding before the light. It left hand is holded flat above its eyes. Its wear a [loincloth] and carries somekind of staff."
 
-The Grue's staff is a thing carried by the Grue. The Description of tshe Grue's Staff is "A extmrely tall staff. It is made out of some kind of bronze colored material." 
-
-Understand "Troll" and "Breast" as Grue.
-
-The maximum hit points of the Grue is 1.
+The Grue's staff is a thing carried by the Grue. The Description of tshe Grue's Staff is "A extmrely tall staff. It is made out of some kind of bronze colored material."
 
 before attacking Grue:
 	say "The Grue can probadly take you. Then he will eat you. [if feeding the grue has not ended][first time]Perhaps you should try shooting at it or making a deal.[only][end if]";
@@ -995,9 +979,10 @@ after of hugging the Grue:
 
 Section - The Princess
 
-Mabel is asleep woman. Understands "fraternal twin sister", "fraternal twin", "twin", "twin sister ","sister", "Crown Princess Mabel", "Crown Princess", "Princess Mabel", "Princess" and "Other Half" as Mabel. Aquamarine Grown is clothing. The description of Aquamarine Grown is "It is just a simple plain aquamarine color dress, not to fancy. While the material might be a bit pricey, but it very modest in design." Mabel wears aquamarine grown. Understands "Mabel's dress", "Aquamarine Dress", "Dress", "Mabel's Aquamarine Dress", "Mabel's Grown" and "Mabel's Aquamarine Grown" as Aquamarine Grown. 
+Mabel is asleep woman. Understands "fraternal twin sister", "fraternal twin", "twin", "twin sister ","sister", "Crown Princess Mabel", "Crown Princess", "Princess Mabel", "Princess" and "Other Half" as Mabel. 
 
 The description of Mabel is "[if Mabel is asleep]She is a very beatiful young lady not that much older than you. Though she clealy have not been able to clean hershelf up in the past week or so, she is clearly looks as good as ever. Her long wavy soft brown hair cascade down her shoulders and over her chest. She very obvoius an Arkonkian as she has green skin. A trait found in the majority of 'indigenous' Arkonkians. One of countless (and by far the most obviloius) mutantions that creation the human subspeices of [italic type]Homo Sapiens Arkonkiais[roman type] in the centuries of gentic drift bewteen the ship carring what would become the first Arkonkia got suck into that wormhole and Democratic Federation first making contract with the new civilation that formed on Arkonkia[otherwise]This is your tiwn sister, Mabel, the Princess of Arkonia. She is a very beatiful young lady hough she clealy has not been able to clear hershelf up in the pass week or so. But, just like you, she looks as good as ever[end if]."
+Mabel wears aquamarine grown. Aquamarine Grown is clothing. The description of Aquamarine Grown is "It is just a simple plain aquamarine color dress, not to fancy. While the material might be a bit pricey, but it very modest in design."  Understands "Mabel's dress", "Aquamarine Dress", "Dress", "Mabel's Aquamarine Dress", "Mabel's Grown" and "Mabel's Aquamarine Grown" as Aquamarine Grown. 
 
 the maximum hit points of Mabel is 50;
 
@@ -1080,7 +1065,6 @@ To have Mabel cut parts:
 		try Mabel taking hyperspace radio parts;
 		
 Requesting is an action applying to one thing.
-[Understand "ask for [something]" as requesting.]
 
 Carry out Mabel requesting the multitool knife:
 	say "Would you like her to get the multitool knife for you? [command clarification break][PromtPlayerToAnswerMabel]";
@@ -1198,9 +1182,7 @@ Every turn when Mabel is awake:
 		if an Avisurite is in Mabel's curr loc and can Mabel attack is true:
 			if a random chance of 1 in 2 succeeds:
 				have Mabel fight;
-				now Did Mabel Do something is true;
-			otherwise if a random chance of 1 in 2 succeeds:
-				now Did Mabel Do something is true;
+			now Did Mabel Do something is true;
 		if Did Mabel do something is false and Bored Mabel is not happening and Exploring Command Center is happening:
 			let prev be Boring Mabel;
 			if a random chance of 1 in 20 succeeds:
@@ -1321,7 +1303,7 @@ topic						reply
 "Parent/Parents/Father/Mother/Dad/Mom/Mama/Mommy/Daddy/Mum/Pop/Papa/King/Queen/Monarch/Consort"				"[one of]'Hey, speaking of that,' she responses, 'how are mom and dad?'[paragraph break]You tell her that they are both are okay. She is happy to hear that.[or]'Our parent are probadly worry sick about me right?' she asks, 'No, no. Do not tell me.'[or]'With me being kidnapped and you coming out here to save me after winning in a war, they much be going through hell', she says.[or][one of]'I am just happy they are okay,' she says.[or]Mabel tell you, 'I an not help by image what they much be going trought right now.'[then purely at random][stopping]"
 "Apple/Natives/Native/Rodent/Locals"						"[if follow the natives is happening]'That Apple they give us was very good,' she says, 'any way what do you think we should do? Do we should ingore them and [bold type]STAY[roman type] here, or should we [bold type]FOLLOW[roman type] and see where they are tring to lead us?[otherwise if encountering the natives is happening]I think they want you to eat the Apple.[otherwise]Mason what are you talking about. I do not see any of that here[end if]"
 "shoes/feets"					"[one of]'They stole my shoes, Mason,' She excalims, 'can you belive that? They took my shoes and now I am force to walk around bare foot.'[paragraph break]'Yeah, they tend to do that,' You tell her, 'In many of their culutres stealing an artlice of clothing or two a mean of humiliating captured foe.'[or] 'I still can not belive that took my shoes?' Mabel says.[stopping]"
-"holdout/kidnapping/kidnappers"					"[one of]These people are not contected to the Consortium, at least not after our President and their Grand Speaker signed the teaty and it subsequent ratification. They think it's unfavorable to the consortium, at least that thier leader told me. Also seem she personally didn't like the Wellosa Empire mediating the peace talks since 'those tripod inhabiting cephalopodiod brian sacks' had gone from 'great conquerors' to 'metephorically softies''[or]'I hate those [MabelAvisuriteInsult],' she says.[stopping]"
+"holdout/kidnapping/kidnappers"					"[one of]These people are not contected to the Consortium, at least not after our President and their Grand Speaker signed the teaty and it subsequent ratification. They think it's unfavorable to the consortium, at least that thier leader told me. Also seem she personally didn't like the Wellosa Empire mediating the peace talks since 'those tripod inhabiting cephalopodiod brian sacks' had gone from 'great conquerors' to 'total softies''[or]'I hate those [MabelAvisuriteInsult],' she says.[stopping]"
 "Kawkawgrrrr/Kawkawgr"					"'Is that what they are speaking?' she says."						
 
 To say Evil-Ending:
@@ -1370,14 +1352,12 @@ She taks it and goes, ''Hummmm, you are right it is much much better than it loo
 
 Section - The Avisurites
 
-Avisurite is a kind of person. The description of Avisurite is "You regonized these dinosaur looking creatures any where. They are Avisurites. Orginally hailing the planet Bok-to-wa-grunk (it sounds better when they say), they are built like a Velociraptor. Though unlike a Velociraptor they have four fingers (including a opposable thumbs) instead of three, a bird like beak and they stand almost as tall as a human on average. Their bodies are almost completely covered in feather. They are dressed in a stanard consortium militray uniform. [first time] You hvae no idea why these one kidanpped the Princess for? The war is over. But you have heard that their many in the consortium who do not like the terms of the peace treaty. The theory is that they belive they are part of an holdout hoping to restart the war by kidanping the hier to the throne of a prominent member state of the Federarion.[only]" 
+Avisurite is a kind of person. The description of Avisurite is "You regonized these dinosaur looking creatures any where. They are Avisurites. Orginally hailing the planet Bok-to-wa-grunk (it sounds better when they say), they are built like a Velociraptor. Though unlike a Velociraptor they have four fingers (including opposable thumbs) instead of three, a bird like beak and they stand almost as tall as a human on average. Their bodies are almost completely covered in feather. They are dressed in a stanard consortium militray uniform. [first time] You hvae no idea why these one kidanpped the Princess for? The war is over. But you have heard that their many in the consortium who do not like the terms of the peace treaty. The theory is that they belive they are part of an holdout hoping to restart the war by kidanping the hier to the throne of a prominent member state of the Federarion.[only]" 
 
 Consortium militray uniform is a kind of clothing. The description of a consortium militray uniform is "A dark gray military uniform of the soider of the consortium. Most are design to fit the body plan of the Avisurite as they make most of the population of the consortium. They have a badge of their shoilder to mark their ranks."
 
-[Instead of an actor wearing a consortium militray uniform when the actor is not a Avisurite:
-	if the actor is not an avisurite:
-		say "Unlike this uniform, [refer to the actor] is not Avisurite-shaped.";
-		stop the action;]
+[before an actor wearing a consortium militray uniform:
+	unless the actor is an avisurite, say "[The actor] tries to put on [the noun], but Unlike this uniform, [regarding the Actor][they][are] not Avisurite-shaped." instead;]
 	
 The Holdout Leader is a female Avisurite. The consortium officer uniform is a Consortium militray uniform. The Holdout Leader wears the consortium officer uniform. The Description of The Holdout Leader is "This is the leader of the Holdout. She has a scar covering her right eye. Her grayish brown feathers are red at their tips. Her scales are a vivid orangish brown and are more shinny they most others of her species. [first time] This mean she (or her ancestors) most likely comes from a the most eatern tip of a continent from their southern hemishpere thier home planet [only]"
 
@@ -1523,7 +1503,7 @@ The Crashsite is a Room in Desert. "[one of]You get out of the pod and look arou
 Player is in the Crashsite.
 
 The escpace pod is an fixed in place thing in Crashsite. The Description of the escpace pod is "This was the pod you and four other uses to escapace the pirate attack. It got hit and crashed here. From the outside you can tell it is badly damage. the the side is a little picture of the [the flag of the Democratic Federation]."
-Understands "pod", "pod outsides", "escpace pod", "escpace pod outsides", "escpace pod's outsides", "pod's outsides", "pod exteror", "pod's exteror", "escpace pod exteror" and "escpace pod's exteror" as escpace pod. The flag of the Democratic Federation is a part of the escpace pod. The Description of the flag of the Democratic Federation is "An azure field with a white neolithic hand negative at it center with a wreath beanthide it and above it five different color dots in a crescent pattern representing the five founding members."
+Understands "pod", "pod outsides", "escpace pod", "escpace pod outsides", "escpace pod's outsides", "pod's outsides", "pod exteror", "pod's exteror", "escpace pod exteror" and "escpace pod's exteror" as escpace pod. The flag of the Democratic Federation is a part of the escpace pod. The Description of the flag of the Democratic Federation is "An azure field with a white neolithic hand negative at it center with a wreath below it and above it five different color dots forming a crescent pattern forming a cirle with it."
 
 The Avisurite Fort and Dunes are backdrops. Dunes are in Crashsite and Sand Dunes. The Avisurite Fort is in Crashsite and Sand Dunes. Understand "Sand dunes" as dunes.
 The airlock is a open door. The airlock is inside of the Crashsite and outside of the Pod Interor. The Description of the airlock is "This is the pod's airlock. It is [if airlock is open]wide open[else]shuted closed[end if]."
@@ -1625,7 +1605,7 @@ South of Behind Fort is Fort Frontage. Northwest of Fort Frontage is Behind Fort
 
 Section 3 - Oasis and Bush
 
-Lakeside Oasis and The Bush are rooms in the Desert. [Lakeside Oasis is northwest of Sand Dunes. The Bush is northeast of Sand Dunes.] Dunes are in the Bush.
+Lakeside Oasis and The Bush are rooms in the Desert. Dunes are in the Bush.
 The Avisurite Fort is in the Lakeside Oasis and the Bush. 
 West of Fort frontage is Lakeside Oasis. East of Fort frontage is The Bush. North of Lakeside Oasis is Empty Desert. North of Bush is Empty Desert. Southwest of Fort frontage is Lakeside Oasis. Southeast of Fort Frontage is The Bush.
 
@@ -1662,6 +1642,7 @@ Instead of taking coconut-thing:
 		if a random chance of 3 in 5 succeeds:
 			decrease the current hit points of the player by 2;
 			say "You accdient poke yourself, causing you to suffer 2 damage. [Current Health of the player].";
+			finger if the player is dead;
 		otherwise:
 			say "You are lucky that you were extra careful.";
 	continue the action;
@@ -1833,12 +1814,15 @@ The description of the top of prison turret is "Just a baren empty space at the 
 The description of the bare spiral staircase is "A bare stone spiral stair case. The consortium is litteraly just as adavance as the Federation and this fort as a spiral staircase, but not an evelator. You desgiend this thing. You want to talk to the Architect and give then a peice of your mind."
 
 The wooden door is a door.
-The description of the wooden door is "The door itself is made out of what you recoginize as the wood from a tree navite to Bok-to-wa-grunk, though to surive lighting stirkes and forest fires[if knob is fixed in place]. But it's [knob] still to be made out of a material not has resistance to fire or lighting and it attached to the door by two screws[end if]."
+The description of the wooden door is "The door itself is made out of what you recoginize as the wood from a tree navite to Bok-to-wa-grunk, known to surive lighting stirkes and forest fires[if knob is fixed in place]. But it's [knob] still to be made out of a material not has resistance to fire or lighting and it attached to the door by two screws[end if]."
 
 Knob is a screwable fixed in place thing in top of prison turret. The description of the knob is "It is door knob. It has a lock built into it. What did you expected." Understand "door knob" as knob.
 
 The wooden door is north of top of prison turret and south of Princess room.
 The wooden door is closed and locked. Wooden door has matching key  multitool knife.
+
+carry out shooting the wooden door with something when the wooden door is openable:
+	say "You hit it, but the door is still there, in place and completely intact. It is not even have burns marks or a dent on it. Perhaps you should try something else." instead;
 		
 instead of cutting the wooden door when the wooden door is openable:
 	say "You used the tiny saw blade to saw a hole in the door. It took you a much unbelievably shorter amount of time than anyone would reasonablely expect. Though interesting all the noise you where making did not awake the princess who is sleeping in her bed.";
@@ -2033,16 +2017,12 @@ after an actor switching on a control panel #3:
 instead of an actor switching on control panel #4:
 	if the fort control panel is visible,say "You hear radio static.";
 	now control panel #4 is switched on;
-	[now switchesControlPanel is true;
-	if hasExaminedPanel is false:
-		now hasExaminedPanel is True;]
+	now switchesControlPanel is true;
 	
 instead of an actor switching off control panel #4:
 	if the fort control panel is visible, say "It goes quite";
 	now control panel #4 is switched off;
-	now switchesControlPanel is true;
-	if hasExaminedPanel is false:
-		now hasExaminedPanel is True;
+	
 
 carry out listening to control panel #4:
 	if control panel #4 is switched off:
@@ -2372,12 +2352,6 @@ Every turn during Guard Fight:
 	if the location of Avisurite Guard is not the location of the player and Avisurite Guard is undefeated:
 		let the way be the best route from the location of Avisurite Guard to the location of the player, using doors;
 		try Avisurite Guard going the way;
-
-[When Guard Fight ends:
-	if the Player is in Atrium:
-		say "The guard collapses to the ground. As you stand trumpihly you look around and see that the rest of the Holdout has been wacthig you the whole time. They quickly Strom you, and the next thing you known you are strieped of everything but your uniform and your the family picture and locke dup with the Princess. [paragraph break] Once holdout soilders leave she sats by from her bed and luaghs at you asking, 'Please at least tell em there are more on the way.'[paragraph break]
-You tell her, 'The fleet I came with was attacked by pirates. I known other had made to escapse pods. I am sure many of them made it, but after my my pod crash I am the only one to survivie.'[paragraph break]She luaghs at you agian, 'Well you sure have messed up big this time brother, but at least we are here together.'[paragraph break]'There always a bright side to every thing isn't there, Mabel?' you reply.";
-		end the story saying "Do not worry the Consortium will show up to deal with this rebeling holdout themselves, maybe.";]
 		
 The final duel is a scene. The final duel begins when Mabel is in the Atrium for the first time and Mabel is awake. The final duel ends when Holdout Leader is defeated and Avisurite Guard is defeated and Avisurite Soilder is defeated;
 
@@ -2406,10 +2380,10 @@ Every turn during The Final Duel:
 		let the way be the best route from the location of Avisurite Guard to the location of the mabel, using doors;
 		try Avisurite Guard going the way;
 	repeat with Enemy running through Avisurites in the location of the Player:
-		let the gun be a random plasma blaster carried by Enemy;
-		if the gun is not nothing:
-			if the hasAttack of Enemy is false:
-				if a random chance of 3 in 5 succeeds:
+		if the hasAttack of Enemy is false:
+			let the gun be a random plasma blaster carried by Enemy;
+			unless the gun is nothing:
+				if a random chance of 4 in 5 succeeds:
 					if a random chance of 1 in 2 succeeds:
 						try Enemy shooting the player with the gun;
 					otherwise:
@@ -2419,23 +2393,22 @@ Every turn during The Final Duel:
 						try Enemy attacking the player;
 					otherwise:
 						try Enemy attacking Mabel;
-				otherwise if a random chance of 3 in 5 succeeds and enemy is Avisurite Guard:
+				otherwise if enemy is Avisurite Guard and a random chance of 3 in 5 succeeds:
 					try Avisurite Guard attacking the Player;
-		otherwise:
-			if a random chance of 1 in 35 succeeds:
-				if a random chance of 1 in 2 succeeds:
-					try Enemy attacking the player;
-				otherwise:
-					try Enemy attacking Mabel;
 			otherwise:
-				let chosen blaster be a random plasma blaster in the location;
-				try Enemy taking chosen blaster;
-		now the hasAttack of Enemy is false;
+				if a random chance of 3 in 35 succeeds:
+					if a random chance of 1 in 2 succeeds:
+						try Enemy attacking the player;
+					otherwise:
+						try Enemy attacking Mabel;
+				otherwise:
+					let chosen blaster be a random plasma blaster in the location;
+					try Enemy taking chosen blaster;
+			now the hasAttack of Enemy is false;
 
-		
 When The Final Duel ends:
 	say "You have won the battle.";
-	unless Player carries hyperspace radio parts:
+	unless Stealing parts has ended:
 		say "Mabel turn to you and asks, 'Didn't you say that the pod's Hyperspace radio is broken?'[paragraph break]You nod your head.[paragraph break]'[if Exploring Command Center has not happened]They probably have part to fix it in their command center. I belive it is in the western tower somewhere,'she says.[paragraph break] [otherwise if Exploring Command Center is happening and the location of the Player is not the fort command center]They might have something in the command center to fixed it,' she says.[paragraph break][otherwise]I think we should look around for parts,' she says.[paragraph break] The holographic display did seems to something about a hyperspace radio.[end if]You take sometime to think before coming to your decision.";
 
 
