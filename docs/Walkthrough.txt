@@ -1,0 +1,1224 @@
+>Start of a transcript of:
+
+Not a Fairy Tale
+An Interactive Fiction by Casey Alton Marshall
+Release 2 / Serial number 250608 / Inform 7 v10.1.2 / D
+Inform 7 v10.1.2
+Identification number: //48D5D249-8AFA-41D0-A63D-CB7399B8C72D//
+Interpreter version 0.6.0 / VM 3.1.3
+
+>look at self
+You are Lieutenant Mason Pinoideae, a young officer of the Democratic Federation military. You are as good looking as ever.
+
+>i
+You are carrying:
+  a family photo
+  twenty Rations
+  a blaster pistol
+  a multitool knife
+  a spare blaster
+
+>look at photo
+A picture of your family taken when you were younger. You, your twin sister, your father and your mother. Despite being very well off, your family had always lived very modestly, relatively speaking. But for some reason, your parents decided to show off their wealth that day. You think about your sister and hope she is doing okay.
+
+>look ration
+Surprisingly good, though you can exactly tell what they are or what is in them. They say they are very healthy and can even help you heal faster. Even after all you experience fighting in the war you are still not sure how much you actually believe that last part.
+
+>look pistol
+This is an extremely complicated weapon that fires a bolt plasma at something, in the form of a handgun. Please be careful and remember basic gun safety. Though you fought in a war, you do not have to be reminded of that, right?
+
+The blaster pistol's safety is turned on.
+
+>look spare
+This blaster pistol is used to belong to one of your fallen comrades.
+
+The spare blaster's safety is turned on.
+
+>look knife
+A very handy multitool with fancy gadgets and stuff. It has a regular old knife blade of course. Be careful with it. It is sharp. It also has a small saw blade, various types of screw driver heads and something that no one is really sure what it's suppose to do but it seems to be very good at picking the locks of some doors, but not others.
+
+>look at sky
+It is evening time and the planet's star is setting. The Sky is a beautiful painted canvas of orange red, yellow, blue and purple. Above you see those "hawks" that tried to eat your fallen comrades after you first wander out of the pod to explore the surrounding area. The air is starting to cool, yet it is still unbearably hot.
+
+>look at sunset
+Over to the west the planet's star is setting. Very few people in the known universe have never seen a starset in some form before. They are not really that special, but they do have their different and they sure are beautiful.
+
+>look at hawks
+You look up. You see three of "hawks" that previously tried to eat your fallen compatriots soaring high above you, they rarely ever seem to flap their feathery pterosaur-like wings, circling like vultures.
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+A squirrel-rat thing goes past you, then makes its way up the dunes.
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+You see a yellow fox or coyote looking thing with a rocket strapped to it chasing after a purple and green pterosaur-winged road runner going by(?)
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+Jellyfish" full of air sacs of various sizes float around in the air almost like balloons.
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+You currently do not see much around you right now.
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+The "hawks" are still circling above you
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+Far in the distance you see an herb of an animal transvesting the desert. They are big with relatively long necks. They look vaguely like a stegosaurus, but instead the plates are on the tail and the strike are on the back along with three camel-like humps.
+
+>look at wildlife
+Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. 
+
+Jellyfish" full of air sacs of various sizes float around in the air almost like balloons.
+
+>look at plants
+There are many plants that inhabit this seemingly barren wasteland. The most common variety appears to be these short thorny bushes. Though there are a few trees here and there.
+
+>look at pod
+This was the pod you and four other users used to escape the attack on the fleet. It got hit and crashed here. From the outside you can tell it is badly damaged. the side is a little picture of the flag of the Democratic Federation.
+
+>look at flag
+An azure field with a white neolithic hand negative at its center with a wreath below it and above it five different color dots forming a crescent pattern forming a circle with it.
+
+>look at photo
+A picture of your family taken when you were younger. You, your twin sister, your father and your mother. Despite being very well off, your family had always lived very modestly, relatively speaking. But for some reason, your parents decided to show off their wealth that day. You take a good look at your sister in the picture. You and her have always had a very strong family resemblance.
+
+>in
+
+Pod Interior
+This was the pod you and four others used to escape the pirate attack. It got hit and crashed here. It look better on the inside than on the outside. But you know that the ion engines and the Alcubierre are beyond repair. So are the interior gravitron manipulators. But it's not like you were even going to get it in space again either way. What matter is the hyperspace Communications are broken, but fixed if you can find the rights parts. But at least you can still pick up radio waves in regular space. Though all you get is static and the very faded songs of musicians speaking in languages you can not understand lightyears away and decades ago.
+
+You can see an airlock, three Sleeping Bags (closed) and a communication unit (in which are normal radio communications, Hyperspace communications and Communications housing (closed)) here.
+
+>look at unit
+This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby. You would try to see if you can get in contact with other survivors, but  the Princess is right there. You have to go try saving her, even if you kill yourself doing it. You know she would do the save for you.  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. it is closed.
+
+In the communication unit are normal radio communications, Hyperspace communications and Communications housing.
+
+>listen
+You hear nothing unexpected.
+
+>look at hyperspace
+This is the hyperspace communications unit. It sends radio waves through hyperspace instead of, well, normal space. It is broken. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good use. Though it would be nice if you could fix it yourself. It would certainly be nice to know that help is coming.
+
+Hyperspace communications is currently switched off.
+
+>look at normal radio
+This is the pod's communications, its hyperspace radio transmitter and receiver are both damaged. But, at least the normal radio still works. Too bad the nearest world inhabited by a radio capable civilization is lightyears away. And even then, they have yet to develop a form of practical interplanetary travel much less faster than practical light travel, so it would be both pointless and illegal to try contacting them. You could sit here and try to contact other survivors, but you have a Princess to go try and save. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good uses.
+
+normal radio communications is currently switched off.
+
+>look at housing
+This is the housing for all the parts of the pod of the communication unit.
+
+>open housing
+You open Communications housing, revealing some broken parts and some working parts.
+
+>look at housing
+This is the housing for all the parts of the pod of the communication unit.
+
+In Communications housing are some broken parts and some working parts.
+
+>look at broken parts
+These are the broken parts of the hyperspace radio.
+
+>look working
+These are the still working parts for the pod's communications units.
+
+>take working
+There is no need to remove these. They are working
+>take brolen
+You can't see any such thing.
+
+>take broken
+Taken.
+
+>close housing
+You close Communications housing.
+
+>turn on unit
+You switch the entire communication unit on.
+
+You turn on the radio and no matter what frequency you turn it to, all you hear is static and the occasional hint of faded music from some "nearby" radio capable civilization.
+
+You switch normal radio communications on.
+
+You flip the switch back and forth, it still doesn't change a thing. You still do not hear a thing.
+
+You turn it off. It literally makes no differences.
+
+>listen
+You turn on the radio and no matter what frequency you turn it to, all you hear is static and the occasional hint of faded music from some "nearby" radio capable civilization.
+
+>turn off unit
+You switch the entire communication unit off.
+
+You flipped the switch and the communications unit goes silent.
+
+You switch normal radio communications off.
+
+That's already off.
+
+>out
+
+Crashsite
+This is where your escape pod crashed. You are the only survived. Your fallen compatriots now lay beside the pod lying beneath the Parachute in makeshift body bags, so that those "hawks" and other wildlife will not  feast upon their corpses. You see to the north a Avisurite Fort not far off from your crashed pod. In every other direction there is only Dunes. In side of the Crashsite is the escape pod, it's airlock wide open. You can see an Avisurite Fort from here.
+
+>close airlock
+You close the airlock.
+
+>look at fort
+This is a Towering Fortification is an old base that must have been deserted long ago, but there are some signs it may be reoccupied. You recognize the architectural style from the War. From its rectangular base to its medieval-looking towering circular spire-like turrets. The designs its reeks of something built by the four fingered reptiloid hands and avian beaks of the Syndicated Consortium. You've seen countless buildings of a similar design during the war. But the war is over, there is peace in the Orion-Cygnus Arm, But This isn't the Arm and the kidnappers are not with the Consortium. At least not any more.
+
+>look at turret
+You can't see any such thing.
+
+>look at turrets
+The fort has three medieval-looking towering circular spire-like turrets. Why do you feel like you are going to have to go up one like the hero of some cheesy fairy tale?
+
+>look at base
+This is the base of the Fort.
+
+>look at dunes
+Hills of sand all across the Deserts.
+
+>look at sand
+There are two opinions on sand: 
+One: "I don't like sand. It's coarse and rough and irritating and it gets everywhere." 
+Two: "I like sand. Sand is squishy." 
+In deserts people tend towards the first.
+
+>n
+
+Dune Valley
+Travel through the valley of sand Dunes you pod crash at the end of. To the south is where your Pod crashed. To the North is the Avisurite Fort.
+
+>n
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance here.
+
+The crab-like creature has wanders over from Behind Fort.
+The crab takes a little break in the shade.
+
+>look at mouth
+This is an opening of the dark entrance into the fort.
+
+The crab-like creature heads offs to Lakeside Oasis.
+
+>look at crab
+You can't see any such thing.
+
+>shoot crab
+You can't see any such thing.
+
+>w
+
+Lakeside Oasis
+You are standing among the Mongraves that surround a beautiful Lake in the middle of the desert. A little piece of paradise in the middle of the otherwise barren desert. In the middle of the lake is an island. You might have taken a closer look, but these Creatures along the shoreline are lying and waiting like crocodiles for some poor creature to come too close.
+
+You can see a Crab, a Dimetrodon like creature and four Red fruits here.
+
+The Dimetrodon like creature It briefly turn to look at you, before returning to mining it own business.
+
+The crab-like creature heads offs to Behind Fort.
+
+>look at dimetrodon
+This Creature looks very similar to the extinct  Permian stem-mammal known as a Dimetrodon. Complete with a Sail and two clearly different types of Teeth. Yet the most notable difference between this creature and its Terran look alike is the  three long ant-like Antennas growing out of its head. It seems to mine its own business and seems to pose no threat to you. Looks like it likes hanging out around the lake.
+
+The Dimetrodon like creature It looks over at the planet's setting star and sighs.
+
+>look at lake
+The lake strangely rather large. You wonder if it is normal to have a gigantic lake in the middle of a "barren" desert. Aren't deserts supposed to be arid? In the middle of the lake is a island. Careful to avoid those mammalian-looking crocodile-python things, you decide if you can see anything swimming around in the lake. 
+
+ The lake looks very deep
+
+The Dimetrodon like creature is basking in the setting light of the sun, peacefully.
+
+>look at lake
+The lake strangely rather large. You wonder if it is normal to have a gigantic lake in the middle of a "barren" desert. Aren't deserts supposed to be arid? In the middle of the lake is a island. Careful to avoid those mammalian-looking crocodile-python things, you decide if you can see anything swimming around in the lake. 
+
+ The lake looks very deep
+
+The Dimetrodon like creature is approached by a bird looking creature. It looks at the bird, scaring it away.
+
+>look at island
+Mongraves cover the island just like the shore.
+
+The Dimetrodon like creature It looks over at the planet's setting star and sighs.
+
+>look along the shore line
+I only understood you as far as wanting to look Creatures along the shoreline.
+
+>look along the shoreline
+These things that look crossed between a crocodile and a python yet with mammalian skin and hair lay beneath the surface waiting to snatch anything that gets too close. You would take a closer look, but you don't want to risk getting too close.
+
+The Dimetrodon like creature is basking in the setting light of the sun, peacefully.
+
+>look teeth
+Just like its counterpart on Early Permian Earth, it has large canines in the front and smaller uniformish teeth in the back.
+
+The Dimetrodon like creature is approached by a bird looking creature. It looks at the bird, scaring it away.
+
+>look sail
+Very similar to the sail of an actual Dimetrodon. Its dorsal spins are even sticking out of the top.
+
+The Dimetrodon like creature It briefly turn to look at you, before returning to mining it own business.
+
+>look at mongrave
+You can't see any such thing.
+
+>look at island
+Mongraves cover the island just like the shore.
+
+The Dimetrodon like creature is basking in the setting light of the sun, peacefully.
+
+>look at mongraves
+Various trees, bushes and "grasses" surround the lake.
+
+The Dimetrodon like creature is approached by a bird looking creature. It looks at the bird, scaring it away.
+
+>look at fruit
+It looks like a banana, but it is red.
+
+The Dimetrodon like creature It briefly turn to look at you, before returning to mining it own business.
+
+>take all
+Red fruit: Taken.
+Red fruit: Taken.
+Red fruit: Taken.
+Red fruit: Taken.
+
+The Dimetrodon like creature It looks over at the planet's setting star and sighs.
+
+>e
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance here.
+
+>e
+
+The Bush
+You enter a small forest of sort, a bush. There are lot of bushes and shrubs in the bush, also trees. But some of the plants catch your eye more than overs.
+
+You can see a weird plant (in which is a weird coconut thing), three Yellow fruits and a ground orange here.
+
+>look at plant
+This tumbleweed-looking bush thing is closed in thick thorns.
+
+In the weird plant is a weird coconut thing.
+
+The crab-like creature has wanders over from Fort frontage.
+The crab scurries on by.
+
+>look at crab
+This "Crab" has six legs instead of eight (or ten like the ones on Arkonkia) and seem to be just fine walking around in the  dry heat of the desert. Though it is dusk, so it is cooling off . But besides all of that, it looks like a normal Crab.
+
+The crab-like creature heads offs to Fort frontage.
+
+>look at coconut
+This fruit or maybe vegetable has a hard shell just like a coconut's. It has roots and vines sticking out of it. What could be inside of it?
+
+The crab-like creature has wanders over from Fort frontage.
+The crab takes a little break in the shade.
+
+>look at fruit
+(the Red fruit)
+It looks like a banana, but it is red.
+
+The crab-like creature heads offs to Behind Fort.
+
+>look at yellow fruit
+Big gigantic big yellow strawberry-looking thing the size of a small orange.
+
+>look at yellow orange
+You can't see any such thing.
+
+>look orange
+It looks kind of like an orange but it grows in the sand.
+
+>take all
+You decide to avoid taking the coconut thing in that weird plant to avoid poking yourself.
+
+Yellow fruit: Taken.
+Yellow fruit: Taken.
+Yellow fruit: Taken.
+ground orange: Taken.
+
+>w
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance here.
+
+The crab-like creature has wanders over from Behind Fort.
+The crab crawls along on the dry sand.
+
+>turn off pistol
+You turn the safety of the blaster pistol off.
+
+The crab-like creature heads offs to Behind Fort.
+
+>n
+
+Entrance.
+Darkness
+You are now standing in a partly lit tunnel that leads into the fort. The Avisurites have a strange taste in architecture. 
+
+You know it is very dark in here, you might be eaten by a Grue.
+
+On the wall you see, barely visible from the light bit of light pouring out of the mouth of the entrance, you see a switch.
+
+>turn on light
+You hear a click, and the room brightens.
+
+You switch the light switch on.
+
+You turn. That is when you see, you see it, cowarding before the light. It's a gruesome trolllike creature. hunchback, large muscular body. Pale greenish gray tinted skin. You immediately recognize this creature as a Grue. They hail from a dwarf planet orbiting a red dwarf in the Large Magellanic Cloud. They are known for their bottomless hungry and love of the dark.
+
+Entrance
+This tunnel is the entryway into the fort. Standing at the northern end of the Tunnel, blocking your way is Grue guard cowarding in the light. To the south is the The mouth of the entrance tunnel
+
+You can see a light switch here.
+
+>ask grue about deal
+We speak to the Grue in its native Gruish, well broken Gruish pepper with words from Arkonkian and Kawkawgrrrr (an Avisurite language you pick up a little of during in the war).
+Your Grueish is a bit rusty, but after talking with the Grue for a while, you both seem to come to an agreement. He will let you into the fort if you feed him something. You think it's specifically asking for two kinds of chewing(?). You have no idea what that means so you ask if there is anything else he would want.  Then it asks for fruit or vegetable or a nut from the bush. It sounds like he will only let you in if you give it a certain kind of animal or a certain kind of fruit-like thing.
+
+Though your Gruish is rusty.
+
+>ask grue about grue
+"I am a Grue," it says proudly. "We lurk. We wait. We eat. We survive. We are Philosophers, Scholars, Chefs and Mercenaries".
+Though your Gruish is rusty.
+
+>ask grue about holdout
+"I am a mercenary," the Grue says, "they pay me good to guard fort."
+Though your Gruish is rusty.
+
+>ask grue about philosopher
+"I enjoy philosophy myself. Too bad your gruish is bad. Else I would share with you. Gruish is best language for philosophy."
+Though your Gruish is rusty.
+
+>s
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance and a Crab here.
+
+The crab-like creature heads offs to Behind Fort.
+
+>w
+
+Lakeside Oasis
+You are standing among the Mongraves that surround a beautiful Lake in the middle of the desert. A little piece of paradise in the middle of the otherwise barren desert. In the middle of the lake is an island. You might have taken a closer look, but these Creatures along the shoreline are lying and waiting like crocodiles for some poor creature to come too close.
+
+You can see a Dimetrodon like creature here.
+
+The Dimetrodon like creature It briefly turn to look at you, before returning to mining it own business.
+
+>look at dimetrodon
+This Creature looks very similar to the extinct  Permian stem-mammal known as a Dimetrodon. Complete with a Sail and two clearly different types of Teeth. Yet the most notable difference between this creature and its Terran look alike is the  three long ant-like Antennas growing out of its head. It seems to mine its own business and seems to pose no threat to you. Looks like it likes hanging out around the lake.
+
+The Dimetrodon like creature is approached by a bird looking creature. It looks at the bird, scaring it away.
+
+>look at teeth
+Just like its counterpart on Early Permian Earth, it has large canines in the front and smaller uniformish teeth in the back.
+
+The Dimetrodon like creature is basking in the setting light of the sun, peacefully.
+
+>shoot dimetrodon
+Pew shiew!
+You hit The Dimetrodon like creature. It lets out an other worldly roar as it collapses to the ground.
+
+>push dimetrodon west
+Destipe it's wight, mass and the sand, you still are able to move its corpse across the desert.
+
+You can't go that way.
+
+>push dimetrodon east
+With all your strength you move the dead creature eastwards.
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance here.
+
+The crab-like creature has wanders over from Empty Desert.
+The crab takes a little break in the shade.
+
+>e
+
+The Bush
+You enter a small forest of sort, a bush. There are lot of bushes and shrubs in the bush, also trees. But some of the plants catch your eye more than overs.
+
+You can see a weird plant (in which is a weird coconut thing) here.
+
+>cut plant
+You cut a hole in the thorny vines of the bush so you can retrieve that strange coconut looking fruit or vegetable or whatever.
+
+>cut coconut
+You slice the weird coconut like fruit or vegetable or whatever in half. Inside you find, instead of the white meat or water of a coconut, but flesh is strangely more like that of a pineapple. You crave out the yellow juicy fruit flesh out of the shells and put it into your pack. And toss the shells aside.
+
+>i
+You are carrying:
+  weird coconut flesh
+  a ground orange
+  three Yellow fruits
+  four Red fruits
+  some broken parts
+  a family photo
+  twenty Rations
+  a blaster pistol
+  a multitool knife
+  a spare blaster
+
+>w
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a Dimetrodon like creature and a mouth of the entrance here.
+
+>push dimetrondon n
+You can't see any such thing.
+
+>push dimetrodon n
+With all your strength you move the dead creature northwards.
+
+Entrance
+This tunnel is the entryway into the fort. Standing at the northern end of the Tunnel, blocking your way is Grue guard cowarding in the light. To the south is the The mouth of the entrance tunnel
+
+You can see a light switch here.
+
+>give Grue DImetrodon
+The Grue takes the Dimetrodon like creature.
+
+The Grue devoured the dimetrodon-like creature. It is a very, well gruesome slight. But you'd seen worse than this.
+ Afterwards the grue sits down, pats his stomach and asks you why you were watching him eat. You are not quite sure yourself. You guess it was just a fascinating slight.
+
+>n
+
+Atrium
+The atrium is silent. It's very nice looking actually. It is a vast chamber where golden Sand still clings to the polished stone of the Walls, remnants of years spent abandoned under unforgiving sun. Evening twilight comes in through the windows on the high ceiling, illuminating the marron banners that hanging from the otherwise bare walls, baring a striking Emblem. 
+
+You look around there are lots of Crates. There are also three doors. One to the north that is open. As well as one to the west and another to the east which are both closed. There is also the big opening in the south which you entered the fort from. There is alone Avisurite guard. You can either fight with the guard(which is probably not a good idea), try going north to sneak among the crates to get to the northern door, or try seeing what is behind the other two doors.
+
+You can see a northern door, an eastern door, a western door and Avisurite Guard here.
+
+>n
+
+bottom of prison turret
+You are at the base of the prison tower. Behind you is the northern door used to enter from the Atrium. Looking around you see that it's just a bare empty space at the bottom of a medieval looking stone tower with just a bare spiral staircase going up. "Okay, what is this a fairy tail? you think to yourself, "I mean there are dragons, trolls and quests. Like  you already slayed one dragon, make a deal with a troll and now you are storming a castle and climb a tower to save a princess from like a bundle of other dragons. It is the 4th millennium C.E., A.D. or whatever you want to call it and this is reality. This is reality!!!! What the heck? What nexts? Some epic twisted that? Like has the Princess secretly run away to marry the Grand Speaker of the Consortium? Is the Chancellor of the Federation actually an evil derk sorceress planning on taking over the galaxy? Has the President been a robot this whole time? Is a wizard going to show up out of not where and save the day at the last moment? Are Avisurites really five gnomes stacked up on top of each other." 
+"Just take a deep breath Mason", you tell yourself "just take a deep break and let it all go. Just calm yourself now and go up the stairs. The long stairs up the tall tower."
+
+>look
+bottom of prison turret
+You are at the base of the prison tower. Behind you is the northern door used to enter from the Atrium. The room is just a bare empty space at the bottom of a medieval looking stone tower with just a bare spiral staircase going up. 
+
+>up
+
+top of prison turret
+Just a bare empty space at the bottom of a medieval looking stone tower with just a bare spiral staircase going down to the bottom. To the north is into a wooden door into a room. It is closes. It also has a door Knob.
+
+>look at door
+The door itself is made out of what you recognize as the wood from a tree native to Bok-to-wa-grunk, known to survive lightning strikes and forest fires. But it's Knob still to be made out of a material not has resistance to fire or lighting and it attached to the door by two screws.
+
+>look at knob
+It is a door knob. It has a lock built into it. What did you expected.
+
+>look at banners
+Marron colored vexillum similar to the battle banners of the Consortium. The symbol they bear even has a strong resemblance with that beared by the consortium.
+
+>shoot door
+You hit it, but the door is still there, in place and completely intact. It does not even have burn marks or a dent on it. Perhaps you should try something else.
+
+>shoot knob
+Pew shiew!
+You hit it.
+
+You shoot the knob off the door.
+
+>n
+(first opening the wooden door)
+
+The Princess's Cell.
+The room is a semicircle. Taking up half of the top of the turret. There is a Bed on which the princess is sleeping. All around are the holdout's banners. There are also windows made of glass with steel jail cell like bars.
+
+On Bed is The Princess.
+
+You can also see a wooden door here.
+
+>look at Princess
+She is a very beautiful young lady not that much older than you. Though she clearly has not been able to clean herself up in the past week or so, she still looks as good as ever. Her long wavy soft brown hair cascades down her shoulders and over her chest. She's very obviously an Arkonkian as she has green skin. A trait found in the majority of Arkonkians. One of countless (and by far the most obvious) mutations in the centuries of genetic drift between the colonist ships carrying what would become the first Arkonkia got stuck into a wormhole and Democratic Federation first making contract with the new civilization that formed on Arkonkia. She wears a simple aquamarine gown and her feet are bare.
+
+>look at Princess
+She is a very beautiful young lady not that much older than you. Though she clearly has not been able to clean herself up in the past week or so, she still looks as good as ever. Her long wavy soft brown hair cascades down her shoulders and over her chest. Like most Arkonkian humans she has green skin. She wears a simple aquamarine gown and her feet are bare.
+
+>look at grown
+It is just a simple plain aquamarine color dress, not too fancy. Well the material might be a bit pricey, but it's very modest, simple and plain design.
+
+>hug princess
+You hug The Princess.
+
+You hug her. It is not even two seconds passes before she starts fighting and struggling to break free while yelling, "Let go of me you stupid lizards."
+
+You tell her, "Mabel, it's me Mason." 
+
+She pushes you back and says very loudly, "Mason, what the hell are you doing here?" You sssssshh her to be quiet. She was always a bit obnoxious ever since you two were little. 
+"Oh, okay. Right. But seriously, what are you doing here? Rescuing me. I really appreciate it and I understand I am the heir to the throne, so everyone would want to be back home safely. But you already fought in the war, shouldn't have put it on yourself to come here to save me. Besides we both know that I am more than Rescuing myself, I am not some Damsel in distress in some fairy tale. In fact I was slowly coming up with a plan to break out of here."
+
+ "But then what Mabel?" You ask her, "There is nothing but desert for kilometers around. Can you rescue yourself from heat stroke or thirst."
+
+ "I am well aware that is the one thing I could not figure out. But I guess I do not have too now that you are here," she replies.
+
+"Plus you know I can not let anything happen to me baby sister," you tease her as you used to do all the time. She has always been the more childish one between the two of you, destipe being three minutes older. Though you do know she is indeed more than able to handle herself. In fact she wanted to fight in the war too, but she is the heir and you are the spare. That is actually one of the few times that you actually work in your favor.
+
+ You decided to take some time explaining the entire situation to her. After filling her up to speed about your predicament, she asks, "So what exactly is the plan?"
+
+ You hand her the spare blaster pistol and tell her, "follow me".
+
+ "Shouldn't I, like, have a permit or something to use this?" she asks you to point it to the ground. 
+
+ "Not in this situation," You tell her, "I am not going to leave my twin sister defenseless as we risk our lives trying to get out of here."
+
+The Princess's Cell.
+The room is a semicircle. Taking up half of the top of the turret. There is a Bed. All around are the holdout's banners. There are also windows made of glass with steel jail cell like bars.
+
+You can see Mabel and a wooden door here.
+
+>look at Mabel
+This is your twin sister, Mabel, the Princess of Arkonia. She is a very beautiful young lady, she has long cascading waves of hair the same shade of dark brown as you. Also just like you she has brown eyes and middle light green skin (A common Arkonkian trait). She is wearing a plain simple aquamarine grown. Though she clearly has not been able to clear herself up in the past week or so, but, just like you, she looks as good as ever.
+
+You see Mabel looking down at her bare feet.
+
+>look self
+You are Lieutenant Mason Pinoideae, a young officer of the Democratic Federation military and Prince of Arkonkia. You are as good looking as ever.
+
+Mabel looks around.
+
+>look at photo
+A picture of your family taken when you were younger. You, your twin sister, Crown Princess Mabel, your father-the King of Arkonkia-  and your mother the Queen-consort. Destipe being very well off, your family had always lived very modestly, relatively speaking. But for some reason, your parents decided to show off their wealth that day. You are happy to see your sister again..
+
+Mabel stares up at the walls.
+
+>show Mabel the photo
+"Wait, is that that photo? It is!!!", Mabel says.
+
+>show Mabel the photo
+"Oh, look how young we are there?", Mabel says.
+
+>show Mabel the photo
+"I forgot how dad used to look before his hair started to turn gray.", Mabel says.
+
+>show Mabel the photo
+"Mom looks so pretty there doesn't see.", Mabel says.
+
+>show Mabel the photo
+"I still can not believe you brought this picture.", Mabel says.
+
+>show Mabel the photo
+"how many time are you going to show me this picture?", Mabel says.
+
+>show Mabel the photo
+"That is a very nice photo isn't?", Mabel says.
+
+>show Mabel the photo
+"That is a very nice photo isn't?", Mabel says.
+
+>s
+
+top of prison turret
+Just a bare empty space at the bottom of a medieval looking stone tower with just a bare spiral staircase going down to the bottom. To the north is into a wooden door into a room.It is now open. 
+
+You can see Knob here.
+
+Mabel arrives from the north.
+
+>show Mabel ration
+"That what they make you eat?", she says.
+
+ "Yet, it tastes much better than it looks," you tell her, "here it's a little nimble." You break a small piece off and hand it over to her.
+
+ She takes it and goes, "Hmmmm, you are right it is much much better than it looks."
+Mabel health has increase by 1. Her health is now 51.
+
+>d
+
+bottom of prison turret
+You are at the base of the prison tower. Behind you is the northern door used to enter from the Atrium. The room is just a bare empty space at the bottom of a medieval looking stone tower with just a bare spiral staircase going up. 
+
+Mabel arrives from above.
+
+>s
+
+Atrium
+The atrium is silent. It's very nice looking actually. It is a vast chamber where golden Sand still clings to the polished stone of the Walls, remnants of years spent abandoned under unforgiving sun. Light of the planet's two largest moons shine in from the windows on the high ceiling, illuminating the marron banners that hanging from the otherwise bare walls, baring a striking Emblem. 
+
+You look around there are lots of Crates. There are also three doors. One to the north that is open. As well as one to the west and another to the east which are both closed. There is also the big opening in the south which you entered the fort from.
+
+You can see a northern door, Avisurite Soldier, a Holdout Leader, an eastern door, a western door and Avisurite Guard here.
+
+Mabel arrives from the north.
+
+You and Mabel enter the Atrium and see a female Avisurite wearing a Consortium Officer uniform standing in the middle of the room. She looks at both of you and Tweets, Chirps, Barks and Growls before saying in perfect English in a thick Anglo-American accent, "How? How did you make it pass the Grue. They are like my one underling that actually manages to pull their weight around here and you know what it does matter," She then turn to her soldiers and Hisses in KawKawGrrrrr, "Attack!!!!!!!"
+
+Pew shiew!
+Holdout Leader takes a shot at you.
+Holdout Leader missed You.
+
+Pew shiew!
+Avisurite Guard shots at Mabel.
+Mabel has been hit: Mabel takes 2 damage. Her health is now 49.
+
+>shoot soldier
+Pew shiew!
+You hit The Avisurite Soldier:  The Avisurite Soldier takes 3 damage. Her health is now 12.
+
+Avisurite Soldier tail-whacks You. 
+You takes 6 damage. Your health is now 54.
+
+Your stomacth growls with hunger.
+
+Pew shiew!
+Mabel shots at Avisurite Guard.
+The Avisurite Guard has been hit: The Avisurite Guard takes 3 damage. His health is now 12.
+
+Pew shiew!
+Avisurite Guard shots at Mabel.
+Mabel has been hit: Mabel takes 4 damage. Her health is now 45.
+
+Pew shiew!
+Holdout Leader shots at Mabel.
+Mabel has been hit: Mabel takes 1 damage. Her health is now 44.
+
+>shoot soldier
+Pew shiew!
+You hit The Avisurite Soldier:  The Avisurite Soldier takes 7 damage. Her health is now 5.
+
+Avisurite Soldier scratches You with its finger claws. 
+You takes 4 damage. Your health is now 50.
+
+Mabel says, "Die! Die! Die! You reptilian fools!"
+Pew shiew!
+Mabel shots at the Holdout Leader.
+The Holdout Leader has been hit: The Holdout Leader takes 4 damage. Her health is now 36.
+
+Pew shiew!
+Holdout Leader shots at Mabel.
+Holdout Leader missed Mabel.
+
+>shoot soldier
+Pew shiew!
+You hit The Avisurite Soldier:  The Avisurite Soldier takes 5 damage. Her health is now 0.
+Avisurite Soldier falls to the floor.
+
+>w
+
+Hallway
+A narrow hallway. To the west, ahead of you is a carpeted spiral staircase .
+
+You can see a western door here.
+
+Mabel arrives from the east.
+
+The Holdout Leader arrives from the east.
+
+Avisurite Guard arrives from the east.
+
+>shoot guard
+Pew shiew!
+You hit The Avisurite Guard:  The Avisurite Guard takes 4 damage. His health is now 8.
+
+Pew shiew!
+Avisurite Guard takes a shot at you.
+You have been hit: You takes 8 damage. Your health is now 42.
+
+Mabel yells, "Hey, Mason look out."
+
+Pew shiew!
+Mabel shots at the Holdout Leader.
+The Holdout Leader has been hit: The Holdout Leader takes 6 damage. Her health is now 30.
+
+Pew shiew!
+Holdout Leader shots at Mabel.
+Mabel has been hit: Mabel takes 3 damage. Her health is now 41.
+
+>shoot guard
+Pew shiew!
+You hit The Avisurite Guard:  The Avisurite Guard takes 5 damage. His health is now 3.
+
+Pew shiew!
+Avisurite Guard takes a shot at you.
+You have been hit: You takes 2 damage. Your health is now 40.
+
+Pew shiew!
+Mabel shots at the Holdout Leader.
+The Holdout Leader has been hit: The Holdout Leader takes 5 damage. Her health is now 25.
+
+Pew shiew!
+Holdout Leader shots at Mabel.
+Holdout Leader missed Mabel.
+
+>shoot guard
+Pew shiew!
+You hit The Avisurite Guard:  The Avisurite Guard takes 6 damage. His health is now -3.
+Avisurite Guard falls to the floor.
+
+>shoot leader
+Pew shiew!
+You hit The Holdout Leader:  The Holdout Leader takes 7 damage. Her health is now 18.
+
+Pew shiew!
+Holdout Leader takes a shot at you.
+Holdout Leader missed You.
+
+Pew shiew!
+Mabel shots at the Holdout Leader.
+The Holdout Leader has been hit: The Holdout Leader takes 8 damage. Her health is now 10.
+
+Pew shiew!
+Holdout Leader shots at Mabel.
+Mabel has been hit: Mabel takes 9 damage. Her health is now 32.
+
+Mabel tells you, "Hey Mason, I am feel a bit peckish."
+
+>give Mabel flesh
+She eats weird coconut flesh.
+Mabel's health has been increased by 9. Her health is now 41.
+Mabel says, "Mmmm."
+
+>shoot leader
+Pew shiew!
+You hit The Holdout Leader:  The Holdout Leader takes 6 damage. Her health is now 4.
+
+Pew shiew!
+Holdout Leader takes a shot at you.
+You have been hit: You takes 4 damage. Your health is now 36.
+
+Mabel says, "Mason, look behind you."
+
+Pew shiew!
+Mabel shots at the Holdout Leader.
+The Holdout Leader has been hit: The Holdout Leader takes 8 damage. Her health is now -4.
+The Holdout Leader falls to the floor.
+
+You have won the battle.
+Mabel turns to you and asks, "Didn't you say that the pod's Hyperspace radio is broken?"
+
+You nod your head.
+
+"They probably have part to fix it in their command center. I believe it is in the western tower somewhere,"she says.
+
+ You take some time to think before coming to your decision.
+
+>eat ration
+You eat the Ration.
+Your health has been increased by 7. Your health is now 43.
+
+It tastes good, very good. Though after serving five years in the Army of the Democratic Federation you still do not have any idea what it is made form.
+
+Mabel stands around patiently.
+
+>eat ration
+You eat the Ration.
+Your health has been increased by 6. Your health is now 49.
+
+It tastes good, very good. Though you still do not have any idea what it is made form.
+
+Mabel plays with her hair.
+
+>w
+(first opening carpeted spiral staircase)
+
+second floor landing
+This is the landing of the second floor of the fort. You do not have time to explore this fort. There is a carpeted spiral staircase heading back down and another spiral staircase heading back up. You know above you is the command center of the fort.
+
+You can see an eastern door here.
+
+Mabel arrives.
+
+>u
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel walks ahead of you.
+
+(first opening another spiral staircase)
+
+fort command center
+The room is full of control panels and Holographic displays. It must be the command center for the fort, where the holdout runs all of their operations.
+
+You can see another spiral staircase, female operator, male operator, control panel #1, control panel #2, control panel #3 and control panel #4 here.
+
+Pew shiew!
+female operator takes a shot at you.
+female operator missed You.
+
+She sure looks very aggressive and vicious. She is one fierce Avisurite.
+
+The male operator cowardly makes a run towards the stairs.
+
+Pew shiew!
+Mabel shots at Cowardly avisurite.
+The Cowardly avisurite has been hit: The Cowardly avisurite takes 3 damage. His health is now 12.
+
+Cowardly avisurite scratches Mabel with its finger claws, knocking the spare blaster out of her hands. 
+Mabel takes 1 damage. Her health is now 40.
+
+Mabel arrives from below.
+
+>shoot Fierce
+(fierce Avisurite)
+Pew shiew!
+You hit The fierce Avisurite:  The fierce Avisurite takes 7 damage. Her health is now 8.
+
+Pew shiew!
+fierce Avisurite takes a shot at you.
+fierce Avisurite missed You.
+
+Pew shiew!
+fierce Avisurite takes a shot at you.
+You have been hit: You takes 3 damage. Your health is now 46.
+
+Mabel goes, "This is what you get when you kidnapped me."
+Mabel hit fierce Avisurite, knocking her Fierce avisurite Blaster out of her hands. The fierce Avisurite takes 4 damage. Her health is now 4.
+
+fierce Avisurite tail-whacks Mabel. 
+Mabel takes 5 damage. Her health is now 35.
+
+You are starting to think she is enjoying this way too much.
+
+>attack fierce
+Which do you mean, Fierce avisurite Blaster or fierce Avisurite?
+
+>Avisurite
+Which do you mean, Fierce avisurite Blaster or fierce Avisurite?
+
+>take all
+Fierce avisurite Blaster: Taken.
+
+>attack fierce
+(Fierce avisurite Blaster)
+Violence is rarely ever the answer to things.
+
+Mabel hit fierce Avisurite. The fierce Avisurite takes 5 damage. Her health is now -1.
+fierce Avisurite falls to the floor.
+
+>drop fierce
+Dropped.
+
+Mabel hums to her self
+>attack fierce
+Violence is rarely ever the answer to things.
+
+Mabel look like she getting a bit bore, watching you
+>look
+fort command center
+The room is full of control panels and Holographic displays. It must be the command center for the fort, where the holdout runs all of their operations.
+
+You can see another spiral staircase, Fierce avisurite Blaster, Mabel, control panel #1, control panel #2, control panel #3 and control panel #4 here.
+
+It looks like Mabel might be getting a little bore
+>look a Panel #1
+This is a white and light gray control panel. It looks just like all the other ones in the room. It is covered with display screens and buttons glowing sky blue, orange and white.
+
+Control panel #1 is currently switched on.
+
+Mabel hums to her self
+>look a Panel #2
+This is a white and light gray control panel. It looks just like all the other ones in the room. It is covered with display screens and buttons glowing sky blue, orange and white.
+
+Control panel #2 is currently switched on.
+
+Mabel fiddles with her hair
+>look a Panel #3
+This is a white and light gray control panel. It looks just like all the other ones in the room. It is covered with display screens and buttons glowing sky blue, orange and white.
+
+Control panel #3 is currently switched on.
+
+Mabel paces impatiently
+>look a Panel #4
+This is a white and light gray control panel. It looks just like all the other ones in the room. It is covered with display screens and buttons. This one looks like it contains the controls of the fort's Communications. The protective sheet of metal covering the internal components seems to be loose.
+
+Control panel #4 is currently switched off.
+
+Hmmm. Maybe perhaps you can try open up it wiring compartment and see if there any part you can take to fixed the Pod's hyperspace radio.
+
+Mabel fiddles with her hair.
+
+>open wiring compartment
+You open the wiring compartment, revealing some hyperspace radio parts.
+
+You are getting out your knife to begin taking the parts out, when Mabel asks "I can do it if you want?"
+
+Would you like her to get the multitool knife for you? 
+(Answer Mabel by entering YES or NO) >N
+You politely tell her no and turn your attention to the open wiring compartment
+Mabel hums to her self.
+
+>cut hyperspace
+You cut the wires connecting the parts that you need with the rest of the panels.
+Now You just need to unscrew the screws.
+
+Mabel fiddles with her hair.
+
+>unscrew hyperspace
+You remove all the screws keeping the parts you need in place.
+You take each of the part that you need and put them in your pack.
+
+You got the part you need to fix the hyperspace radio. Now let's go to the pod and fix it. Then you can try getting in contact with the federation.
+
+Mabel fiddles with her hair.
+
+>d
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel walks pass of you.
+
+second floor landing
+This is the landing of the second floor of the fort. You do not have time to explore this fort. There is a carpeted spiral staircase heading back down and another spiral staircase heading back up. You know above you is the command center of the fort.
+
+You can see an eastern door and a spare blaster here.
+
+Mabel arrives from above.
+
+>d
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel walks ahead of you.
+
+Hallway
+A narrow hallway. To the west, ahead of you is a carpeted spiral staircase .
+
+You can see a western door, Consortium Officer Pistol and a Consortium Blaster Rifle here.
+
+Mabel arrives.
+
+>e
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel walks pass of you.
+
+(first opening the western door)
+It seems to be locked.
+
+>give Mabel knife
+"Sure, I will take this for you." Mabel says.
+
+You give the multitool knife to Mabel.
+
+>e
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel runs ahead of you.
+
+Mabel unlocks the western door.
+
+The western door opens.
+
+Atrium
+The atrium is silent. It's very nice looking actually. It is a vast chamber where golden Sand still clings to the polished stone of the Walls, remnants of years spent abandoned under unforgiving sun. Light of the planet's two largest moons shine in from the windows on the high ceiling, illuminating the marron banners that hanging from the otherwise bare walls, baring a striking Emblem. 
+
+You look around there are lots of Crates. There are also three doors. One to the north that is open. As well as one to the west and another to the east which are both closed. There is also the big opening in the south which you entered the fort from.
+
+You can see a northern door, an eastern door and a western door here.
+
+Mabel arrives from the west.
+
+>look at western
+This is a door, it is labeled in the Avisurite language of Kawkawgrrrr, "western wing, command center".
+
+Mabel hums to herself.
+
+>look at eastern
+This is a door, it is labeled in the Avisurite language of Kawkawgrrrr, "eastern wing, living quarters".  You probably do not need to go in there.
+
+Mabel makes random noises.
+
+>e
+(first opening the eastern door)
+The door will not open.
+
+>e
+(first opening the eastern door)
+The door will not open.
+
+>look at northern
+The sign above this door says in Kawkawgrrrr "Prison Tower".
+
+Mabel take looks at the dirty soles of her bare feet, before setting them down in disgust.
+
+>s
+
+Entrance
+This tunnel is the entryway into the fort. Standing at the northern end of the Tunnel, blocking your way is Grue guard cowarding in the light. To the south is the The mouth of the entrance tunnel
+
+You can see a light switch here.
+
+Mabel look at the Grue. "What the?", she exclaim, "Is that a Grue?"
+
+ "Yes I'm", the Grue tells her in English. He then turns to you and then asks in a very simplified version of Grueish, "Princess ask If I Grue Right?" You nod your head.  "I do not know Arkonkian. I know a little English and a little Mandarin," the Grue adds
+
+You tell Mabel, "Do not be scared, me and him have an understanding." Mabel seems eased up upon hearing that, but she keeping an eye on the Grue."
+
+>ask Grue About Mabel
+The Grue goes, "So this is your sister, eh?"
+Though your Gruish is rusty.
+
+You see Mabel looking down at her bare feet.
+
+>ask Mabel about Grue
+She says, "I did not believe you there was a Grue here when you first told me."
+
+>s
+
+Fort frontage
+This is the front of the area in front of the front. To your North is the Fort, its entrance a dark tunnel that strangely has no door or anyone guarding it. Off to the west is a small oasis surrounding a lake. And to the east is so bush. Behind you is the Valley in the dunes you came from. The Desert extends in all directions around you.
+
+You can see a mouth of the entrance here.
+
+The Cowardly Avisurite runs over from Dune Valley, still panicing.
+
+The crab-like creature has wanders over from Empty Desert.
+The crab digs in the sand looking for food.
+
+Mabel arrives from the inside.
+
+>look at sky
+You look at the nightsky. It is dark and full of countless stars. There almost no light pollution this planet, so you can see many star. So many in fact, it almost look like you are in space. The two larger of the planet's Moons hover in the sky next together.
+
+The Cowardly avisurite goes through the mouth of the entrance.
+
+The crab-like creature heads offs to Dune Valley.
+
+Mabel hums to herself.
+
+>look at moon
+You can't see any such thing.
+
+>look at moons
+You can see the two largest moons of the planet in the sky. One is dark gray the other is orange. They are both next together in the night sky and are wanning gibbouses.
+
+The crab-like creature has wanders over from Dune Valley.
+The crab scurries on by.
+
+Mabel looks around.
+
+>s
+
+Dune Valley
+Travel through the valley of sand Dunes you pod crash at the end of. To the south is where your Pod crashed. To the North is the Avisurite Fort.
+
+The Cowardly Avisurite runs over from Crashsite, still panicing.
+
+Mabel arrives from the north.
+
+>s
+
+Crashsite
+This is where your escape pod crashed. You are the only survived. Your fallen compatriots now lay beside the pod lying beneath the Parachute in makeshift body bags, so that those "hawks" and other wildlife will not  feast upon their corpses. You see to the north a Avisurite Fort not far off from your crashed pod. In every other direction there is only Dunes. In side of the Crashsite is the escape pod, it's airlock shuted closed. You can see an Avisurite Fort from here.
+
+The Cowardly Avisurite runs over from Dune Valley, still panicing.
+
+Mabel arrives from the north.
+
+You look at the Pod. Now you can fix its hyperspace radio and return back home.
+
+>in
+You'll have to say which compass direction to go in.
+I didn't understand that instruction.
+
+
+Mabel walks pass of you.
+
+(first opening the airlock)
+
+Pod Interior
+This was the pod you and four others used to escape the pirate attack. It got hit and crashed here. It look better on the inside than on the outside. 
+
+You can see an airlock, three Sleeping Bags (closed) and a communication unit (in which are normal radio communications, Hyperspace communications and Communications housing (closed)) here.
+
+The Cowardly Avisurite has appeared in Pod Interior, still panicking.
+
+Mabel arrives from the outside.
+
+>open housing
+You open Communications housing, revealing some working parts.
+
+The Cowardly avisurite goes through the airlock.
+
+Mabel takes a deep breath.
+
+>look at unit
+This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby. You would try to see if you can get in contact with other survivors, but if others did survive they probably already sent for help by now if they could. But what if everyone who survived thought that someone else would, then we all would be stuck here for a long time. Perhaps not long enough to start a new civilization of your own, hopefully.  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. Its door is open attached to the ceiling.
+
+In the communication unit are normal radio communications, Hyperspace communications and Communications housing.
+
+Mabel looks around.
+
+>give Mabel parts
+Which do you mean, the hyperspace radio parts, the broken parts or the working parts?
+
+>1
+(the hyperspace radio parts)
+Mabel looks at the parts as you hold them out to her, "Oh, you want me to fix it? Okay then, I would love to," she says taking them from you.
+
+You give the hyperspace radio parts to Mabel.
+
+Mabel puts the parts you stole into the communication housing and hooks them up with the rest of the communication unit.
+
+Mabel closes Communications housing.
+
+"I fixed it," Mabel says triumphantly as she turns to face you, "Would you like to do the honors?"
+
+ "I would love to," you tell her.
+
+>turn on hyperspace radio
+You and Mabel fiddles with the dials of the control panel for some time before you two manage to get in contact with a communication operator for a Federation Space Force patrol's flag ship. You tell them what happened and they inform you that others have already contacted them and they will be there in a few hours. You and Mabel decide to get some sleep before they arrive. You are awakened in the early hours of the morring before sunset to the sounds of a space craft landing somewhere nearby. You look over at Mabel's sleeping bag and find that she has already woke up. You find her standing outside the pod's airlock. You see Federation Troop transport ship landing on top of the dunes to your right. You and Mabel climb the dunes and are greeted by five members of space force patrol including an officer as they walk down the ramp of the ship. After the army platoon that they brought with them march down the same ramp and turn towards the fort, They lead you both aboard and asks if you guys need anything. You and your sister both look at each other. 
+
+"I think we both just want breakfast," you reply.
+
+ "Yes, just Breakfast," Mabel says. 
+
+ The commanding officer quickly looks at both of you and says, "Okay then, I will make sure there is something to eat for both of you when we get back to the flag ship. In the meantime just relax."
+
+And with that the ship transport took off. Once it lands in the flag ship's hangar, you are quickly taken to the ship's mess hall with the other survivors and fed breakfast. Once you both have eaten your meal you are both led to a place to have quick medical diagnoses run on both of them. After you pass with flying colors, you are allowed to clean yourself up and check on your sister. After learning she is in fact doing fine, at least physically, you know that the bulk of the Holdout forces has been rounded up. The ones that have been catched alive will be handed over to the Consortium which will figure out what they want to do with them. The rest are believed to be on the run.
+
+It takes you and your sister three days before you manage to get back home. Once there your family threw a small celebration, and pretty much everyone was happy that you both made it home alive.
+
+Author's note: In case you are wondering whatever happens to The Grue. Well through their mercenary they eventually make enough money to return back to the Grue Home World, where he went on to philosophical treatise that not only change Grue philosophy, but the philosophy of all species, peoples, cultures and civilizations across the local group. Even people as far as Andromeda sing its praises. Furthermore the Grues are big fans of the idea of a philosopher king, the fame of his work led him down the path of being elected the Emperor of the Grues. But, sadly his reign was unfortunately cut short after 8 years when he learned the hard way that even a Grue can eat too much. He was 124 Federation standard years old. Which is old even in Grue terms, just not that old.
+
+
+
+    *** The End ***
+
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+> Quit

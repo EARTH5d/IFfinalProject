@@ -2,22 +2,28 @@
 
 Use American dialect. 
 
+Include Basic Screen Effects by Emily Short.
+
 Release along with a website.
 Release along with the introductory postcard.
 Release along with an interpreter.
 Release along with the library card.
+Release along with cover art.
+Release along with a file of "A walkthrough" called "Walkthrough.txt".
 
 The story creation year is 2025.
 The story title is "Not a Fairy Tale".
 The story author is "Casey Alton Marshall".
 The release number is 2.
-The story description is "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escape, but your pod crashes and everyone else in there has perished, leaving you alone as if in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be imprisoned, is only a few kilometers away. But it is not like you can just walk in there and get the princess. Also you have no idea how you two will be getting home."
+The story description is "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escape, but your pod crashes and everyone else in there has perished, leaving you alone as if in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be imprisoned, is only a few kilometers away. But it is not like you can just walk in there and get the princess. Also you have no idea how you two will be getting home. 
+
+Give a thanks to Chat GPI for the cover art and (for all their troubles) a even larger thanks to all the artists who art Open AI uses to train it. Though I did edited it a bit."
 
 When play begins: 
 	say "After coming back from a war between the Democratic Federation and the Syndicated Consortium, the Humans and the Avisurites, you were shocked to hear that an Anisurite Holdout from the war kidnapped the Crown Princess of the Federation member state Arkonkia. After her family pleads with both the Federation's Senate and the Consortium's Supreme Council to send an expedition force to rescue her. Despite being scarred by the war, and both your own and everyone else's best judgement you feel compelled to volunteer to be part of the mission to save her. Unfortunately, as the ships were just approaching the planet Arkonkian scouts tracked the Princess and her kidnappers to, space pirates attacked the small fleet. The good news you and a few others managed to get on an escape pod. The bad news is that your pod was among many shot by the pirates' ships. This resulted in your pod's engines and its Alcubierre drive being both badly damaged. The Pod crashed upon the planet. To make matters worse, despite the fact you all manage to deploy the parachute, it didn't prevent the pod from ramming into the planet's surface at high speed knocking you unconscious. When you awake, you see that you are the only one to have survived the crash. Furthermore the crash broke the pod's hyperspace communications and you have no idea if any of the other pods have made it. You are on your alone.";
 	repeat with P running through people:
 		now the current hit points of P is the maximum hit points of P;	
-	 now the right hand status line is "[health status]".
+	 now the right hand status line is "[health status]";
 	
 To say health status:
 	if Mabel is asleep:
@@ -44,8 +50,6 @@ Check hugging:
 
 Carry out hugging:
 	say "You hug [noun].";
-	if noun is a asleep person:
-		now noun is awake;
 		
 Flipping is an action applying to one visible thing.
 Understand "flip [something]" and "toggle [something]" as flipping.
@@ -76,6 +80,12 @@ Rule for deciding whether all includes the coconut-thing while taking:
 		say "You decide to avoid taking the coconut thing in that weird plant to avoid poking yourself.";
 		it does not;
 		
+instead of listening:
+	if (the location of the player is pod interior and Communications is switched on) or (the location of the player is fort command center and control panel #4 is switched on):
+		RadioSound;
+	otherwise:
+		continue the action;
+		
 Section - eating stuff
 
 the standard report eating rule is not listed in the report eating rules.
@@ -101,6 +111,7 @@ After an actor eating an edible thing (called food):
 			now Mabel had a ration is True;
 		otherwise:
 			say "Mabel says, '[one of]Mmmm[or]Thanks[or]Yumy[purely at random].'";
+		now Did Mabel do something is True;
 	continue the action;
 
 Check giving an edible thing(called food) to Mabel:
@@ -110,10 +121,11 @@ Check giving an edible thing(called food) to Mabel:
 instead of giving an edible thing to Mabel:
 	now Mabel carries the noun;
 	try mabel eating the noun;
+	now the noun is nowhere;
 	
 Report eating an edible thing (called food):
 	if food is Rations:
-		say "It tastes good, very good. Though[first time]after serving five years in the Army of the Democratic Federation [only]you still do not have any idea what it is made form.";
+		say "It tastes good, very good. Though [first time]after serving five years in the Army of the Democratic Federation [only]you still do not have any idea what it is made form.";
 	otherwise:
 		say "It tastes deliciously. Hopefully it will not make you sick.";
 	
@@ -126,6 +138,7 @@ Mabel hungry is a recurring scene. Mabel hungry begins when the current hit poin
 
 When Mabel hungry begins:
 	say "Mabel [one of]yells out to[or]calls out to[or]shouts out to[or]imform[or]tells[or]tells[purely at random] you, 'Hey Mason, I am [one of]feel[or]feel[or]starting to feel[or] beginning to feel[purely at random] a bit peckish.'";
+	now Did Mabel do something is True;
 	
 Ration are a kind of thing. Ration are always edible. The description of ration is "Surprisingly good, though you can exactly tell what they are or what is in them. They say they are very healthy and can even help you heal faster. Even after all you experience fighting in the war you are still not sure how much you actually believe that last part."
 
@@ -155,20 +168,18 @@ understand "reason with [someone] about [text]" as asking it about.
 understand "reason with [someone] on [text]" as asking it about.
 understand "reason [someone] on [text]" as asking it about.
 
-Understand "talk to [someone]" or "talk with [someone]" or "tell [someone]" or "say to [someone]" or "reason [someone]" as a mistake ("[talkAboutWhat]")
-
-To say talkAboutWhat:
-	say "what do you want to say to them?"
+Understand "talk to [someone]" or "talk with [someone]" or "tell [someone]" or "say to [someone]" or "reason [someone]" as a mistake ("what do you want to say to them?")
 
 Instead of speech when the noun is the Grue:
 	repeat through Table of Grue Responses:
 		if the topic understood includes topic entry:
 			say "[first time]We speak to the Grue in its native Gruish, well broken Gruish pepper with words from Arkonkian and Kawkawgrrrr (an Avisurite language you pick up a little of during in the war).[only][reply entry][line break]Though your Gruish is rusty.";
 			rule succeeds;
-		say "[one of]You are not to sure if the Grue understand what you tried to say[or]The Grue does not seem to understand you, maybe you did not say it right[or]'what?', the Grue reply back to you confused[or]The Grue laughs at you[then purely at random]. Your gruish is very rusty. Try something saying else.";
+	say "[one of]You are not to sure if the Grue understand what you tried to say[or]The Grue does not seem to understand you, maybe you did not say it right[or]'what?', the Grue reply back to you confused[or]The Grue laughs at you[then purely at random]. Your gruish is very rusty. Try something saying else.";
 	
 Instead of speech when the noun is Mabel:
 	if Mabel is awake:
+		now Did Mabel do something is True;
 		if follow the natives is happening and the topic understood includes "follow/following/go":
 			say "You tell Mabel you think you should follow the little furry critters. She agrees.";
 			now turnsInPod is 6;
@@ -183,11 +194,10 @@ Instead of speech when the noun is Mabel:
 					unless the topic understood includes "Apple/Natives/Native/Rodent/Locals" and encountering the natives is not happening:
 						say "[reply entry]";
 						rule succeeds;
-				say "She responds, '[if Follow the Natives is happening]I am much rather focused on the situation at hand right now. You know that I am tempted to [bold type]FOLLOW[roman type] these guys and see where they lead us, but if you really want to we can [bold type]STAY[roman type] here. Please tell me when you make up your mind, Mason[otherwise]We do not have time to talk about that[one of][or][or][or][or][or] mason[or] mason[or] mason[or] brother[or] lieutenat[purely at random][end if].'";
+			say "She responds, '[if Follow the Natives is happening]I am much rather focused on the situation at hand right now. You know that I am tempted to [bold type]FOLLOW[roman type] these guys and see where they lead us, but if you really want to we can [bold type]STAY[roman type] here. Please tell me when you make up your mind, Mason[otherwise]We do not have time to talk about that[one of][or][or][or][or][or] mason[or] mason[or] mason[or] brother[or] lieutenat[purely at random][end if].'";
 	otherwise:
 		say "She still fast a sleep unaware that you are trying talk to her.";
-	now Did Mabel do something is true;
-
+	
 		
 Instead of speech when the noun is an animal:
 	say "[the noun] looks at you with a curious look.";
@@ -213,17 +223,17 @@ Check yelling at the player:
 Carry out yelling at:
 	if the noun is Mabel:
 		if Mabel is asleep:
-			say "The Princess shoots straight up and says angrily, 'What in the hell? Mason? What are you doing here and why are you yelling.' In response you just giggle at her. 'Oh, grow up brother. What are we, 8?'[paragraph break]Still giggling you say, 'Okay okay. I am sorry.'[paragraph break]'Oh my stars mason,' she says,'And people think I am the childish one.'";
+			say "The Princess shoots straight up and says angrily, 'What in the hell? Mason? What are you doing here and why are you yelling.' In response you just giggle at her. 'Oh, grow up brother. What are we, eighth?'[paragraph break]Still giggling you say, 'Okay okay. I am sorry.'[paragraph break]'Oh my stars Mason,' she says, 'And people think I am the childish one.' You stop luaghing at her.";
 			now Mabel is awake;
 		otherwise:
 			say "Mabel [one of]snaps at you[or]snaps back at you[or]says to you[or]screams back[one of][or] at you[purely at random][or]yells [one of]back[or]at you[or]back at you[purely at random][at random], '[one of]Mason there no need to scream, brother.'[or]I do not think that is a good idea.'[or]SShhhhhh!!!!'[or]Why are you yelling?'[purely at random]";
-		now Did Mabel do something is true;
+			now Did Mabel do something is true;
 	otherwise if the noun is Cowardly avisurite:
 		moveCowardlyOperator;
 	otherwise if the noun is Crab and the crab is alive:
 		CrabMoves;
 	otherwise if the noun is the dimetrodon and the dimetrodon is alive:
-		say "It roars back at you before return to mining it own bussiness.";
+		say "It roars back at you before return to mining it own business.";
 	otherwise if the noun is an Avisurite:
 		if Guard fight is happening or Mabel is awake or the noun is the fierce avisurite:
 			say "[The noun] [one of]chirps[or]tweets[or]barks[or]yelps[or]hisses[or]snaps[or]roars[or]growls[or]screams[or]screeches[or]hoots[or]kaws[purely at random] right back at you.";
@@ -235,7 +245,8 @@ Carry out yelling at:
 		otherwise:
 			say "You think the grue is telling you to stop. But your Gruish is rusty.";
 	otherwise if the noun is the Natives:
-		say "The local seems a be either curious, concern or scared of you now.";
+		say "The local seems to not like being yelled at directly. They scream back at you.[paragraph break]
+'I don't think that they like that,' Mabel says.";
 	otherwise:
 		say "You yell at [the noun] nothing happens.";
 		
@@ -253,11 +264,11 @@ Carry out yelling:
 		if the number of avisurite in the location of the player > 0:
 			try yelling at a random avisurite that is the location of the player;
 		if dimetrodon is in the location of the player and dimetrodon is alive:
-			say "The Diemtrodon like creature roars back at you before return to mining it own bussiness.";
+			say "The Diemtrodon like creature roars back at you before return to mining it own business.";
 		if Grue is in the location of the player:
 			try yelling at the Grue;
 		if The Natives is in the location of the player:
-			try yelling at the Natives;
+			say "The local seems a be either curious, concern or scared of you now.";
 		if The Crab is in the location of the player and Crab is alive:
 			try yelling at the Crab;
 	otherwise:
@@ -316,7 +327,7 @@ instead of an actor that is not the player attacking a person (called the target
 	if actor is an avisurite and a random chance of 18 in 20 succeeds:
 		let enemy damage be a random number between 1 and a random number between 5 and 10;
 		decrease the current hit points of the target by enemy damage;
-		say "[The actor] [one of]punches [Refer to target][or]scratches [Refer to target] with its finger claws[or]tail-whacks [Refer to target][or]pecks at [possessive for target] arm with its beak[purely at random][makes target drop something][line break][The target health after enemy damage]";
+		say "[The actor] [one of]punches [refer to target][or]scratches [refer to target] with its finger claws[or]tail-whacks [refer to target][or]pecks at [possessive for target] arm with its beak[purely at random][makes target drop something][line break][The target health after enemy damage]";
 		now hasAttack of actor is true;
 		finger if the target is dead;
 	otherwise if actor is Mabel and a random chance of 15 in 20 succeeds:
@@ -337,7 +348,7 @@ To say makes (target - a person) drop something:
 				now item to drop is arm;
 				rule succeeds;
 		now item to drop is a random plasma blaster carried by the target;
-	if a random chance of 1 in 12 succeeds and the number of things carried by the target > 0: 
+	if a random chance of 1 in 20 succeeds and the number of things carried by the target > 0: 
 		now item to drop is a random thing carried by the target;
 	unless item to drop is nothing:
 		silently try target dropping item to drop;
@@ -350,7 +361,6 @@ to finger if (target - a person) is dead:
 		if target is an Avisurite:
 			say "[The target] falls to the floor.";
 			now the target is defeated;
-			[now every thing worn by the target is in the location;]
 			now everything carried by the target is in the location;
 			now the target is nowhere;
 		otherwise if target is player:
@@ -403,27 +413,24 @@ instead of pushing dimetrodon to a direction:
 	if dimetrodon is alive:
 		try attacking dimetrodon;
 	otherwise:
-		say "[one of]Destipe it's wight, mass and the sand, you still are able to move its corpse across the desert[or]With all your strength you move the dead creature [second noun]wards[stopping].";
+		say "[one of]Despite it's wight, mass and the sand, you still are able to move its corpse across the desert[or]With all your strength you move the dead creature [second noun]wards[stopping].";
 		continue the action;
 		
 Instead of pushing dimetrodon:
 	if dimetrodon is alive:
 		try attacking dimetrodon;
 	otherwise:
-		say "[one of]Destipe it's wight, mass and the sand, you still are able to push[or]With all your strength you move the dead creature just a little bit[stopping].";
+		say "[one of]Despite it's wight, mass and the sand, you still are able to push[or]With all your strength you move the dead creature just a little bit[stopping].";
 	
 Instead of pulling dimetrodon:
 	if dimetrodon is alive:
 		try attacking dimetrodon;
 	otherwise:
-		say "[one of]Destipe it's wight, mass and the sand, you still are able to drag[or]With all your strength you move the dead creature just a little bit[stopping].";
-		
-to say dimetrodon day idle text:
-	say "[one of]is basking in the setting light of the sun, peacefully[or]is approached by a bird looking creature. It just looks at the bird thing scaring it away[or]It briefly turn to look at you, before returning to mining it own bussiness[or]It looks over at the planet's setting star and sighs[in random order]";
+		say "[one of]Despite it's wight, mass and the sand, you still are able to drag[or]With all your strength you move the dead creature just a little bit[stopping].";
 		
 Every turn when Dimetrodon is visible and Dimetrodon is alive:
 	if starset is happening:
-		say "The Dimetrodon like creature [one of]is basking in the setting light of the sun, peacefully[or]is approached by a bird looking creature. It looks at the bird, scaring it away[or]It briefly turn to look at you, before returning to mining it own bussiness[or]It looks over at the planet's setting star and sighs[in random order].";
+		say "The Dimetrodon like creature [one of]is basking in the setting light of the sun, peacefully[or]is approached by a bird looking creature. It looks at the bird, scaring it away[or]It briefly turn to look at you, before returning to mining it own business[or]It looks over at the planet's setting star and sighs[in random order].";
 	otherwise:
 		say "The Dimetrodon like creature [one of]wonder arounds the oasis[or]looks up at the stars[or]looks at you[if The Location of Mabel is the lakeside oasis] and Mabel[end if][or]looks a bit sleepy[at random].";
 
@@ -474,11 +481,10 @@ To crabMoves:
 		let next space be random room which is adjacent to the current space;
 		if next space is Entrance:
 			now next space is Lakeside Oasis;
-		otherwise if next space is the Pod Interior:
-			now next space is Empty Desert;
-		if Crab is visible, say "The crab-like creature heads offs.";
+		if Crab is visible, say "The crab-like creature heads offs to [next space].";
 		move Crab to next space;
-		if Crab is visible, say "The crab-like creature wanders around the area.";
+		if Crab is visible, say "The crab-like creature has wanders over from [current space].";
+		
 		
 
 Chapter - Plasma Blaster
@@ -547,7 +553,7 @@ Instead of examining a plasma blaster(called the weapon):
 	if the weapon is switched on:
 		say "The [weapon]'s safety is turned on.";
 	otherwise:
-		say "he [weapon]'s safety is turned off.";
+		say "The [weapon]'s safety is turned off.";
 
 Section - Shooting it with
 
@@ -594,7 +600,7 @@ Carry out shooting it with:
 				say "You missed!";
 	otherwise:
 		if noun is the knob and the knob is portable:
-			say "Pew shiew![line break]You hitted it.";
+			say "Pew shiew![line break]You hit it.";
 		otherwise:
 			say "Pew shiew![line break]You [one of]burn[or]miss[or]graze[or]barely singe[at random] it.";
 	if the noun is an Avisurites:
@@ -689,10 +695,9 @@ The block cutting rule is not listed in the check cutting rules.
 Understand "cut [something]" as cutting.
 
 carry out of cutting coconut-thing:
-	now the fruit flesh is in the location;
 	now coconut-thing is nowhere;
 	say "You slice the weird coconut like fruit or vegetable or whatever in half. Inside you find, instead of the white meat or water of a coconut, but flesh is strangely more like that of a pineapple. You crave out the yellow juicy fruit flesh out of the shells and put it into your pack. And toss the shells aside.";
-	try taking fruit flesh;
+	now the fruit flesh is carried by the player;
 		
 Check cutting something:
 	if the player does not have a knife:
@@ -735,7 +740,7 @@ carry out an actor picking a door (called target):
 		
 after an actor picking a door (called target):
 	if the target is lockable and the target is unlocked:
-		if the the target is visible, say "[The target] opens.";
+		if the target is visible, say "[The target] opens.";
 		now the target is open;
 	
 section - unscrew
@@ -802,14 +807,14 @@ Chapter - Characters
 
 Section - Player/Mason
 
-Understands "Lietenuat Mason" and "Mason" as yourself.
-The Description of yourself is "You are Lietenuat Mason Pinoideae, a young officer of the Democratic Federation military. You are as good looking as ever."
+Understands "Lieutenant Mason" and "Mason" as yourself.
+The Description of yourself is "You are Lieutenant Mason Pinoideae, a young officer of the Democratic Federation military[if Mabel is awake] and Prince of Arkonkia[end if]. You are as good looking as ever."
 
 The maximum hit points of the player is 60.
 
 The player holds 20 rations and a family photo.
 
-The Description of family photo is "A picture of your family taken when you were younger. You, your twin sister[if Mabel is awake] Crown Princess Mabel[end if], your father [if Mabel is awake]the King of Arkonkia[end if]and your mother[if Mabel is awake] the Queen-consort[end if]. Destipe being very well off, your family had always lived very modestly, relatively speaking. But for some reason, your parents decided to show off their wealth that day. [if Mabel is asleep][one of]You think about your sister and hope she is doing okay[or]You take a good look at your sister in the picture. You and her have always had a very strong family resemblance[or]You take another close look at your sister. You have not had a chance to see you since coming back from the war. Hopefully that all going to change soon[stopping][otherwise]You are happy to see your sister again.[end if]."
+The Description of family photo is "A picture of your family taken when you were younger. You, your twin sister[if Mabel is awake], Crown Princess Mabel[end if], your father[if Mabel is awake]-the King of Arkonkia- [end if] and your mother[if Mabel is awake] the Queen-consort[end if]. Despite being very well off, your family had always lived very modestly, relatively speaking. But for some reason, your parents decided to show off their wealth that day. [if Mabel is asleep][one of]You think about your sister and hope she is doing okay[or]You take a good look at your sister in the picture. You and her have always had a very strong family resemblance[or]You take another close look at your sister. You have not had a chance to see you since coming back from the war. Hopefully that all going to change soon[stopping][otherwise]You are happy to see your sister again.[end if]."
 
 The blaster pistol is a plasma blaster. The Player holds blaster pistol. The Description of blaster pistol is "This is an extremely complicated weapon that fires a bolt plasma at something, in the form of a handgun. Please be careful and remember basic gun safety. Though you fought in a war, you do not have to be reminded of that, right?"
 The multitool knife is a knife. The player holds multitool knife. The description of multitool knife is "A very handy multitool with fancy gadgets and stuff. It has a regular old knife blade of course. Be careful with it. It is sharp. It also has a small saw blade, various types of screw driver heads and something that no one is really sure what it’s suppose to do but it seems to be very good at picking the locks of some doors, but not others."
@@ -818,14 +823,8 @@ The spare blaster is a plasma blaster. The Player carries spare blaster. The Des
 
 [Federation Miliitary Uniform is clothing. The player wears Federation Military Uniform. The description of Federation Military Uniform is "This is a standard blue uniform of the servemen and women of the Democratic Federation Military.";]
 
-Does the player mean shooting something with the The blaster pistol: it is very likely.
-Does the player mean shooting something with the The spare blaster: it is likely.
-[Does the player mean turning safety on The blaster pistol: it is very likely.
-Does the player mean turning safety on The spare blaster: it is likely.]
-[Does the player mean turning safety off The blaster pistol: it is very likely.
-Does the player mean turning safety off The spare blaster: it is likely.]
-[Does the player mean toggling safety The blaster pistol: it is very likely.
-Does the player mean toggling safety The spare blaster: it is likely.]
+Does the player mean shooting something with the blaster pistol: it is very likely.
+Does the player mean shooting something with the spare blaster: it is likely.
 Does the player mean doing something with the Mouth of entrance: It is very unlikely.
 
 
@@ -912,7 +911,7 @@ instead of showing something to the grue:
 	try giving the noun to the grue;
 
 To say grue-deal-text:
-	say "[if isGrueFeed is false]Your Grueish is a bit rusty, but after talking with the Grue for a while, you both seem to come to an agreement. He will let you into the fort if you feed him something. You think it’s specifically asking for two kinds of chewing(?). You have no idea what that means so you ask if there is anything else he would want.  Then it asks for fruit or vegetable or a nut from the bush. It sounds like he will only let you in if you give it a certain kind of animal or a certain kind of fruit-like thing.[otherwise][one of]'You already fully filled your half of the deal.' the Grue tells you.[or]'Thank you. You are now free to pass.'[purely at random]";
+	say "[if isGrueFeed is false]Your Grueish is a bit rusty, but after talking with the Grue for a while, you both seem to come to an agreement. He will let you into the fort if you feed him something. You think it’s specifically asking for two kinds of chewing(?). You have no idea what that means so you ask if there is anything else he would want.  Then it asks for fruit or vegetable or a nut from the bush. It sounds like he will only let you in if you give it a certain kind of animal or a certain kind of fruit-like thing.[otherwise][one of]'You already fully filled your half of the deal,' the Grue tells you.[or]'Thank you,' Tge Grue says, 'You are now free to pass.'[purely at random]";
 
 To say grue-dimetro-text:	
 	say "[if hasgruebeengivendimetrodon is false]'Yes, two kinds of chewing,' the Grue says.[otherwise]'Two kinds of chewing is a filling mean,' The Grue replies.[end if]";
@@ -930,16 +929,16 @@ topic			reply
 "war/teaty/laws/empire/politics/ambassador/secetary-general"			"It appears that since he is a mercenary and from another galaxy he claims he does not care about any of that stuff."
 "hobbies/fun"			"The Grue says 'Eating. Cooking. Sleeping. Hunting. Thinking. Philosophy. '"
 "grue/schoolar/schoolars/mercanary/mercanaries/grues/cooks/cook/chefs/chef/lurk/itself/himself/themself"			"'I am a Grue,' it says proudly. 'We lurk. We wait. We eat. We survive. We are Philosophers, Scholars, Chefs and Mercenaries'."
-"home" or "grue home world"			"'Far away. Small world. Dim skies, red star. One half cook. Other side dark, lovely and beatiful, but frozen. In between comfortly.' It mutters."
+"home" or "grue home world"			"'Far away. Small world. Dim skies, red star. One half cook. Other side dark, lovely and beautiful, but frozen. In between comfortly.' It mutters."
 "light/afraid/fear/scared/sun"			"'Light is scary,' The Grue explains, 'Our star is dangerous. Plus hurt eyes.'"
-"job/work/holdout/tunnel/fort"			"'I am a mercenary.' the Grue says, 'they pay me good to guard fort.'"
+"job/work/holdout/tunnel/fort"			"'I am a mercenary,' the Grue says, 'they pay me good to guard fort.'"
 "dark/darkness/shadow"			"'Comfort.' Grue's voice sounds dreamingly. 'Safe.'"
 "warm/twilight/peace"			"'Peaceful' the Grue sighs. 'comfortable.'"
 "desert/heat/uncomfortable"			"'Desert is uncomfortable,' The Grue groans. 'I do not like heat or light. But not too bad.'"
 "federation/state/president/chancellor/senate" or "Democratic Federation"			"They claim not to care about this Federation’s politics."
 "king/queen/kingdom/paraliment/PM" or "prime minister"			"He claims not to care about your people's politics."
 "consortium/speaker" or "grand speaker" or "supreme council" or "Syndicated Consortium"			"He claims they do not care about the politics of the consortium."
-"cold"			"'Cold is nice, in moderation that is.' The Grue replies."
+"cold"			"'Cold is nice, in moderation that is,' The Grue replies."
 "milkway" or "What are you doing here"			"You think he tells you that he came to this galaxy to find work."
 "god/devil"			"'Long ago we Grues thought Milk Way was god and host star was devil.'"
 "leader/government/emperor" or "supreme leader"			"He says some along the lines of he hasn't been in contact with the grue home world for a long time, so he doesn't know who the current Emperor of the Grues is."
@@ -966,22 +965,22 @@ instead of smelling the Grue:
 instead of listening to the Grue:
 	say "The Grue is not making a lot of noise.";
 	
-instead of hugging the Grue:
+before hugging the Grue:
 	if Feeding the Grue has not ended:
-		say "That probably not a good idea.";
-	if Night is happening:
-		say "The Grue probably does not want a hug.";
+		say "That probably not a good idea." instead;
+	otherwise if Night is happening:
+		say "The Grue probably does not want a hug." instead;
 	otherwise:
 		continue the action;
 		
-after of hugging the Grue:
+after hugging the Grue:
 	say "The Grue says something in Gruish you believe is along the lines of '[one of]Is this how your people's culture say thank?[or]Please not agian.[stopping]'"
 
 Section - The Princess
 
-Mabel is asleep woman. Understands "fraternal twin sister", "fraternal twin", "twin", "twin sister", "sister", "Crown Princess Mabel", "Crown Princess", "Princess Mabel", "Princess" and "Other Half" as Mabel. 
+Mabel is asleep woman. Understands "fraternal twin sister", "fraternal twin", "twin", "twin sister", "sister", "Crown Princess Mabel", "Crown Princess", "Princess Mabel" and "Princess" as Mabel. 
 
-The description of Mabel is "[if Mabel is asleep]She is a very beautiful young lady not that much older than you. Though she clearly has not been able to clean herself up in the past week or so, she still looks as good as ever. Her long wavy soft brown hair cascades down her shoulders and over her chest. [one of]She’s very obviously an Arkonkian as she has green skin. A trait found in the majority of 'indigenous' Arkonkians. One of countless (and by far the most obvious) mutations that led to the creation the (proposal) human subspecies of [italic type]Homo Sapiens Arkonkiais[roman type] in the centuries of genetic drift between the colonist ships carrying what would become the first Arkonkia got stuck into a wormhole and Democratic Federation first making contract with the new civilization that formed on Arkonkia[or]Like most Arkonkian humans she has green skin[stopping]. She wears a simple aquamarine gown and her feet are bare[otherwise]This is your twin sister, Mabel, the Princess of Arkonia. She is a very beautiful young lady, she has long cascading waves of hair the same shade of dark brown as you. Also just like you she has brown eyes and middle light green skin (A common Arkonkian trait). She is wearing a plain simple aquamarine grown. Though she clearly has not been able to clear herself up in the past week or so, but, just like you, she looks as good as ever[end if]."
+The description of Mabel is "[if Mabel is asleep]She is a very beautiful young lady not that much older than you. Though she clearly has not been able to clean herself up in the past week or so, she still looks as good as ever. Her long wavy soft brown hair cascades down her shoulders and over her chest. [one of]She’s very obviously an Arkonkian as she has green skin. A trait found in the majority of Arkonkians. One of countless (and by far the most obvious) mutations in the centuries of genetic drift between the colonist ships carrying what would become the first Arkonkia got stuck into a wormhole and Democratic Federation first making contract with the new civilization that formed on Arkonkia[or]Like most Arkonkian humans she has green skin[stopping]. She wears a simple aquamarine gown and her feet are bare[otherwise]This is your twin sister, Mabel, the Princess of Arkonia. She is a very beautiful young lady, she has long cascading waves of hair the same shade of dark brown as you. Also just like you she has brown eyes and middle light green skin (A common Arkonkian trait). She is wearing a plain simple aquamarine grown. Though she clearly has not been able to clear herself up in the past week or so, but, just like you, she looks as good as ever[end if]."
 Mabel wears aquamarine grown. Aquamarine Grown is clothing. The description of Aquamarine Grown is "It is just a simple plain aquamarine color dress, not too fancy. Well the material might be a bit pricey, but it’s very modest, simple and plain design."  Understands "Mabel's dress", "Aquamarine Dress", "Dress", "Mabel's Aquamarine Dress", "Mabel's Grown" and "Mabel's Aquamarine Grown" as Aquamarine Grown. 
 
 the maximum hit points of Mabel is 50;
@@ -1005,14 +1004,14 @@ To say MabelAvisuriteInsult:
 	say "[one of][one of]avian[or]reptilian[or]dinosaur[or]archosaurian[or]dromaeosaurid[or]hawkish[or]dinosauran[or]dinosauroid[or]theropodan[or]therodonoid[or]dromaeosauridoid[or]saurischian[or]war loving[or]peace hating[or]cry bady[or]war hawk[or]velociraptor[at random] [one of]freaks[or]fiends[or]idiots[or]fools[purely at random][or]goofy looking velociraptors[or]lizards[or]lizard birds[or]bird lizards[or]birds[as decreasingly likely outcomes]";
 
 To say MabelBattleQuips:
- say "[one of]'Brother look out.'[or]'Behind you.'[or]'Die! Die! Die![one of][or]you [MabelAvisuriteInsult][or]Die![as decreasingly likely outcomes]'[or]'This is what you get when you kidnapped me.[no line break]'[or]'The War is over you [MabelAvisuriteInsult][one of]!!!![no line break][or] you hear meee!!!???[no line break][or]. So accept that or, well.[no line break][then at random][no line break]'[or]'Wacth out.'[or]'Mason look behind you.'[or]'You want me come. Then come and get me.'[or]'No one allow to mess with me is my brother here. And I am the one allow to mess with him is me. [first time]And his girlfriend.' You whipser in her imforming to her that you two actually broke up. 'Oh, I am sorry,' She tells you before turning back to the Avisurite[if the number of Avisurites in the location of the player is greater than 1]s[end if], 'He is the only one allow to mess with me and I am the only one allow to mess with him.'[only][or]'Hey, Mason look out.'[in random order]"
+ say "[one of]'Brother, look out.'[or]'Behind you.'[or]'Die! Die! Die![no line break][one of][or] You [MabelAvisuriteInsult]![no line break][or] Die![no line break][as decreasingly likely outcomes]'[or]'This is what you get when you kidnapped me.[no line break]'[or]'The War is over you [MabelAvisuriteInsult][one of]!!!![no line break][or] you hear meee!!!???[no line break][or]. So accept that or, well.[no line break][then at random][no line break]'[or]'Wacth out.'[or]'Mason, look behind you.'[or]'You want me come. Then come and get me.'[or]'No one allow to mess with me is my brother here. And I am the one allow to mess with him is me. [first time]And his girlfriend.' You whipser in her imforming to her that you two actually broke up. 'Oh, I am sorry,' She tells you before turning back to the Avisurite[if the number of Avisurites in the location of the player is greater than 1]s[end if], 'He is the only one allow to mess with me and I am the only one allow to mess with him.'[only][or]'Hey, Mason look out.'[in random order]"
 
 To have Mabel fight:
 	let the target be a random avisurite in the location of the Mabel;
 	let did Mabel mabel quip be false;
 	unless the target is nothing:
 		if a random chance of 3 in 5 succeeds:
-			say "[one of]Mabel says, [MabelBattleQuips][or]Mabel goes, [MabelBattleQuips][or]Mabels yells, [MabelBattleQuips][purely at random]";
+			say "Mabel [one of]says, [MabelBattleQuips][or]goes, [MabelBattleQuips][or]yells, [MabelBattleQuips][purely at random]";
 			now did Mabel mabel quip is true;
 		if a random chance of 6 in 7 succeeds and Mabel carries a plasma blaster:
 			if Mabel carries the spare blaster:
@@ -1170,10 +1169,10 @@ Every turn when Mabel is awake:
 		let the chosen panel be a random fort control panel in the Fort Command Center;
 		if a random chance of 6 in 10 succeeds:
 			if chosen panel is switched off:
-				say "Mabel switches on the [the chosen panel].";
+				say "Mabel switches on the [chosen panel].";
 				try mabel switching on chosen panel;
 			otherwise:
-				say "Mabel switches off the [the chosen panel].";
+				say "Mabel switches off the [chosen panel].";
 				try mabel switching off chosen panel;
 		otherwise:
 			say "Mabel [one of]look at [if the location of holographic displays is the Fort Command Center]the holographic displays[otherwise][the chosen panel], then over at you and then back to the panel agian[end if][or]looks at [the chosen panel][or]look at all the buttons on [the chosen panel][or]hits a random button on [the chosen panel][or]walks other to [the chosen panel][at random] while going 'Hmmmm.'";
@@ -1189,10 +1188,10 @@ Every turn when Mabel is awake:
 			if Mabel's curr loc is Fort Command Center and Final Duel is not happening:
 				increment Boring Mabel;
 			if Boring Mabel is greater than prev:
-				say "[BoringMabelText]";
+				say "[one of]It looks like Mabel might be getting a little bore[or]Mabel look like she getting a bit bore, watching you[or]Mabel rolls her eyes in boredom[or]Mabel fiddles with her hair[or]Mabel stands around growing inpatient[or]Mabel paces impatiently[or]Mabel hums to her self[at random]";
 		otherwise:
 			if Did Mabel do something is false:
-				say "[IdelMabelText]";
+				say "[one of]Mabel hums to herself[or]Mabel fiddles with her hair[or]Mabel fiddles with her hair[or]Mabel plays with her hair[or]Mabel stands around patiently[or]Mabel hums to her self[or]You see Mabel looking down at her bare feet[or]Mabel looks around[or]Mabel stares up at the[if the location of Mabel is in Desert] beautiful night sky[otherwise] walls[end if][or]Mabel jumps up and down[or]Mabel makes random noises[or]Mabel takes a deep breath[or]Mabel take looks at the dirty soles of her bare feet, before setting them down in disgust[purely at random].";
 			if Boring Mabel > 0:
 				if Mabel's curr loc is Fort Command Center:
 					Decrease Boring Mabel by a random number between 0 and a random number between 1 and 2;
@@ -1206,12 +1205,6 @@ instead of the player going a direction when Mabel is awake:
 		say "[paragraph break]Mabel [one of]walks[or]walks[or][one of]walks[or]goes[or]runs[purely at random][or]goes[or]runs[as decreasingly likely outcomes] [one of]ahead[or]pass[at random] of you.";
 		now Did Mabel do something is true;
 	continue the action;
-	
-to say BoringMabelText:
-	say "[one of]It looks like Mabel might be getting a little bore[or]Mabel look like she getting a bit bore, watching you[or]Mabel rolls her eyes in boredom[or]Mabel fiddles with her hair[or]Mabels stands around growing inpatient[or]Mabel paces inpatiently[or]hums to her self[at random]";
-	
-to say IdelMabelText:
-	say "[one of]Mabel hums to herself[or]Mabel fiddles with her hair[or]Mabel fiddles with her hair[or]Mabel plays with her hair[or]Mabel stands around patiently[or]Mabel hums to her self[or]You see Mabel looking down at her bare feet[or]Mabel looks around[or]Mabel stares up at the[if the location of Mabel is in Desert] beautiful night sky[otherwise] walls[end if][or]Mabel jumps up and down[or]Makes random noises[or]Mabel takes a deep breath[or]Mabel take looks at the dirty soles of her bare feet, before setting them down in dissgust[purely at random].";
 		
 instead of taking Mabel:
 	if Mabel is asleep:
@@ -1234,14 +1227,14 @@ instead of pushing Mabel to a direction:
 
 After hugging Mabel:
 	if Mabel is asleep:
-		say "You hug her. It is not even two seconds passes before she starts fighting and struggling to break free while yelling, 'Let go of me you stupid Dinosauroid fiends.'[paragraph break]You tell her, 'Mabel, it's me Mason.' [paragraph break]She pushes you back and says very loudly, 'Mason, what the hell are you doing here?' You sssssshh her to be quiet. She was always a bit obnoxious ever since you two were little. ";
+		say "You hug her. It is not even two seconds passes before she starts fighting and struggling to break free while yelling, 'Let go of me you stupid [MabelAvisuriteInsult].'[paragraph break]You tell her, 'Mabel, it's me Mason.' [paragraph break]She pushes you back and says very loudly, 'Mason, what the hell are you doing here?' You sssssshh her to be quiet. She was always a bit obnoxious ever since you two were little. ";
 		now Mabel is awake;
 	otherwise:
-		say "'I love you too, Mason.' She says hugging you back.";
+		say "'I love you too, Mason,' She says hugging you back.";
 	
 instead of kissing Mabel:
 	if Mabel is asleep:
-		say "You give the Princess a platonic kiss on her forehead. The Princess half awake says, 'ohhh, how sweet my dear Bobby.', pushing to her and kissing you back, right on the lips. You try to break away but her grip is too tight. When she finally realizes who is kissing her and jerks back. 'What the beeping hell,' She says, 'I understand that we are royalty and all, but seriously brother that is a little wierd.' [paragraph break] You laugh. 'Well technically I was just kissing your forehead, Mabel.' She looks at you a bit puzzled. 'you were the one to make it weird.'[paragraph break]'Oh my stars, I thought you were, wait that was dream,' She looks around, 'Dang it, I am still here.'[paragraph break]'It appears so.,' you reply.[paragraph break]'Mason, I , I, I' She is so flustered she’s barely able to speak, 'I am so so sorry. I. I-'[paragraph break]'It's okay,' you interrupt, 'let's just move on and forget about it. We have other things to worry about.'";
+		say "You give the Princess a platonic kiss on her forehead. The Princess half awake says, 'ohhh, how sweet my dear Bobby.', pushing to her and kissing you back, right on the lips. You try to break away but her grip is too tight. When she finally realizes who is kissing her and jerks back. 'What the beeping hell,' She says, 'I understand that we are royalty and all, but seriously brother that is a little wierd.' [paragraph break] You laugh. 'Well technically I was just kissing your forehead, Mabel'- She looks at you a bit puzzled -'you were the one to make it weird.'[paragraph break]'Oh my stars, I thought you were, wait that was dream,' She looks around, 'Dang it, I am still here.'[paragraph break]'It appears so.,' you reply.[paragraph break]'Mason, I , I, I' She is so flustered she’s barely able to speak, 'I am so so sorry. I. I-'[paragraph break]'It's okay,' you interrupt, 'let's just move on and forget about it. We have other things to worry about.'";
 		now Mabel is awake;
 	otherwise:
 		say "'Woe, Mason what the heck do you think you're doing?'";
@@ -1263,7 +1256,7 @@ Instead of attacking Mabel:
 	
 instead of touching Mabel:
 	if Mabel is asleep:
-		say "The minute you touch she shout up right awake and tackle you to the ground. 'If you touch me again, I am going to kill you [MabelAvisuriteInsult]. You hear me? You hear me...' She pauses and looks down. 'Mason, what the hell are you doing here?'[paragraph break]'Wishing you a happy birthday. What do you think I am doing here?' You tell her. 'Can you get off of me now?'[paragraph break]'Sure thing, I am sorry' She says as she slide off of you.'May I help you up?' [paragraph break]You nod yes. SHe grab your hand and help you up. Afterwards you tell her 'thanks.'";
+		say "The minute you touch she shout up right awake and tackle you to the ground. 'If you touch me again, I am going to kill you [MabelAvisuriteInsult]. You hear me? You hear me'- She pauses and looks down -'Mason, what the hell are you doing here?'[paragraph break]'Wishing you a happy birthday. What do you think I am doing here?' You tell her. 'Can you get off of me now?'[paragraph break]'Sure thing, I am sorry' She says as she slide off of you.'May I help you up?' [paragraph break]You nod yes. She grab your hand and help you up. Afterwards you tell her 'thanks.'";
 		now Mabel is awake;
 	otherwise:
 		say "'Oh Mason.', She giggles, 'I think we both had outgrown this kind of stuff. Don't you?'";
@@ -1273,14 +1266,14 @@ Instead of asking Mabel for something:
 	if second noun is spare blaster:
 		say "'No,' she says, 'This my blaster now.'";
 	otherwise if second noun is Aquamarine Grown:
-		say "'What', she says offended, 'I am not going to take off my clothes for no good eason, Mason. Not on some strange planet with people after us. What kind you person asks their sister to take off their clothes anyway.'";
+		say "'What', she says offended, 'I am not going to take off my clothes for no good eason, Mason. Not on some strange planet with people after us. And, what kind of person asks their sister to take off their clothes anyway?'";
 	otherwise:
 		try Mabel giving the second noun to the player;
 	now Did Mabel do something is true;
 		
 instead of giving something to Mabel:
 	unless (the noun is Multitool Knife and (Exploring Command Center has happened and Stealing parts is happening)) or (the noun is Hyperspace Radio and Fixing the Radio is happening):
-		say "'[one of]Okay[or]What oh [one of]yes[or]okay[or]yeah[or]sure thing[purely at random][or]Sure[at random], I will take this for you[one of][or][or][or][or][or] mason[or] mason[or] mason[or] brother[or] lieutenat[purely at random].' Mabel says.";
+		say "'[one of]Okay[or]What? Oh, [one of]yes[or]okay[or]yeah[or]sure thing[purely at random][or]Sure[at random], I will take this for you[one of][or][or][or][or][or] mason[or] mason[or] mason[or] brother[or] lieutenat[purely at random].' Mabel says.";
 	otherwise if the noun is Multitool Knife and (Exploring Command Center has happened and Stealing parts is happening) and Mabel asking for Knife is not Happening:
 		say "You ask Mabel if she would like to get the parts, and she replies 'I would be happy to.' You hand her the multitool.";
 	now Did Mabel do something is true;
@@ -1306,17 +1299,19 @@ topic						reply
 "Kawkawgrrrr/Kawkawgr"					"'Is that what they are speaking?' she says."						
 
 To say Evil-Ending:
+	wait for any key;
 	say "She looks betrayed. She is betrayed. By her other half. She asks you why. You tell her, 'I am not longing the spare now, sister.' And with that you out her out of her messery.[paragraph break]
-The door into the room opens. You do not turn around to see who it is. You already known who it is. You spoke to her, 'We will never speak of this again'- You turn to look at the leader of the holdout -'Ever. Understand?' Though you have no idea if or how she would ever have a chance to tell someone who would care to reveal what you did, at least one that would both believe her and actually be in a position to do anything.[paragraph break] 
-'Yes your highness,' She replies to you in perfect english with a Angloamerican-ish accent, 'I understand.'[paragraph break]
-You into her eyes, her dromaeosaurid-iod body clearly reacting in shock to the way you are looking at her. 'Why do you insult me?' you scream with frustration in Arkonkian, before switching to English you tell her, 'It's your Excellency.'(Though the Arkonkian for that is actually very silimar) pointing to your dead sister's limp body. You pay the holdout leader the amount you promise, inform them to clear out and you leave the fort. The Grue looks at you confused as to where our sister is at. When they asks, you [one of]tell them to not say another word[or]quickly drawn your blaster and shoot the Grue dead, not wanting to leave any witeness[at random]. You sit out on the horizion. You look up at the night sky and catch a glimpse of a flash of lighting. You lower your head and see that there is a big strom on the horizon. You hear some animals howling similarly to Fisften Volvez back home. [if the Dimetrodon is alive]As you pass the lake you realize that one of them is that Dimetrodon like creature. As you pause, so do they and it looks at you, as  if they know exactly what you did. But that is impossible right? You return to walking[otherwise]Then you walk[end if] back to the crashed pod, thinking how you keep your story straight.";
+The door into the room opens. You do not turn around to see who it is. You already known who it is. You spoke to her, 'We will never speak of this again'- You turn to look at the leader of the holdout -'Ever. Understand?' Though you have no idea if or how she would ever have a chance to tell someone who would care to reveal what you did, at least one that would both believe her and actually be in a position to do anything.[paragraph break]
+'Yes your highness,' She replies to you in perfect english with a Angloamerican-ish accent, 'I understand.'[paragraph break]";
+	wait for any key;
+	say "You into her eyes, her dromaeosaurid-iod body clearly reacting in shock to the way you are looking at her. 'Why do you insult me?' you scream with frustration in Arkonkian, before switching to English you tell her, 'It's your Excellency.'(Though the Arkonkian for that is actually very silimar) pointing to your dead sister's limp body. You pay the holdout leader the amount you promise, inform them to clear out and you then you start to leave the fort.When you get to the entrance the Grue looks at you confused as to where our sister is at. When they asks, you [one of]tell them to not say another word[or]quickly drawn your blaster and shoot the Grue dead, not wanting to leave any witeness[at random]. You sit out on the horizion. You look up at the night sky and catch a glimpse of a flash of lighting. You lower your head and see that there is a big strom on the horizon. You hear some animals howling similarly to Fisften Volvez back home. [if the Dimetrodon is alive]As you pass the lake you realize that one of them is that Dimetrodon like creature. As you pause, so do they and it looks at you, as  if they know exactly what you did. But that is impossible right? You return to walking[otherwise]Then you walk[end if] back to the crashed pod, thinking how you keep your story straight.";
 	
 carry out shooting Mabel with something:
 	if Mabel is asleep:
-		say "you fire your [noun] at the Princess killing her in her sleep. Her eyes open wipe and she look right at you.[paragraph break][Evil-Ending]";
+		say "You fire your [second noun] at the Princess killing her in her sleep. Her eyes open wipe and she look right at you.[paragraph break][Evil-Ending]";
 		end the story saying "Now what to do about your father.";
 	otherwise if player is in the princess room:
-		say "Mabel looks down at the area between her chest and her belly, examining her burned clothing and flesh. 'Father's sick you know.' You tell her in a casual voice as if nothing just happened. She looks back up at you.[Evil-Ending]";
+		say "Mabel looks down at the area between her chest and her belly, examining her burned clothing and flesh. 'Father's sick you know,' You tell her in a casual voice as if nothing just happened. She looks back up at you.[Evil-Ending]";
 		end the story saying "Don't you feel any guilt for what you have done.";
 	otherwise:
 		say "You want to shoot your sister? The one person you know you can always trust?";
@@ -1325,17 +1320,16 @@ carry out shooting Mabel with something:
 instead of going through a locked door(called the portal):
 	if Mabel is awake and Mabel carries multitool knife:
 		try Mabel picking the portal;
-	otherwise:
-		continue the action;
-	if a random chance of 2 in 3 succeeds:
-		now Did Mabel do something is true;
+	now Did Mabel do something is True;
+	continue the action;
+	
 		
 Mabel had a ration is a truth state that varies. Mabel had a ration is usually false.
 		
 instead of showing something to Mabel:
 	if the noun is a Fallen Fruit:
 		say "'That [noun] looks tasty,' she says.";
-	if the noun is a ration:
+	otherwise if the noun is a ration:
 		if Mabel had a ration is true:
 			say "'I still can not believe it actually tastes much better than it looks', she says.";
 		otherwise:
@@ -1345,10 +1339,11 @@ She takes it and goes, 'Hmmmm, you are right it is much much better than it look
 		now Mabel had a ration is True;
 		increment current hit points of Mabel;
 		say "Mabel health has increase by 1. [Current Health of Mabel]";
-	if the noun is family photo:
-		say "'[one of]Wait is that that photo? It is!!![or]Oh, look how young you are there?[or]I forgot how dad used to look before his hair started to turn gray.[or]Mom looks so pretty there doesn't see.[or][one of]I still can not believe you brought this picture.[or]how many time are you going to show me this picture?[or]That is a very nice photo isn't?[then purely at random][stopping]', Mabel says.";
+	otherwise if the noun is family photo:
+		say "'[one of]Wait, is that that photo? It is!!![no line break][or]Oh, look how young we are there?[no line break][or]I forgot how dad used to look before his hair started to turn gray.[no line break][or]Mom looks so pretty there doesn't see.[no line break][or][one of]I still can not believe you brought this picture.[no line break][or]how many time are you going to show me this picture?[no line break][or]That is a very nice photo isn't?[no line break][then purely at random][stopping]', Mabel says.";
 	otherwise:
 		say "'That's Cool,' she says.";
+	now Did Mabel do something is True;
 
 
 Section - The Avisurites
@@ -1374,7 +1369,7 @@ An Avisurite can be wounded or unwounded. An Avisurite is usually unwounded.
 An Avisurite can be defeated or undefeated. An Avisurite is usually undefeated.
 
 Avisurite Guard is a male avisurite. The Avisurite Guard wears a Consortium military uniform. Avisurite Guard carries a consortium blaster rifle. Avisurite Guard is in the Atrium.
-Avisurite Soilder is a female avisurite.  Avisurite Soldier wears a consortium military uniform. Avisurite Soilder carries a consortium blaster rifle.
+Avisurite Soldier is a female avisurite.  Avisurite Soldier wears a consortium military uniform. Avisurite Soilder carries a consortium blaster rifle.
 		
 Operator uniform is a kind of consortium military uniform. The description of operator uniform is "A plain white and light gray uniform worn by the tech support personnel of the consortium military.".
 
@@ -1430,7 +1425,7 @@ before the Cowardly Avisurite going through a Door:
 		now the Door is unlocked;
 	if the Door is closed:
 		now the Door is Open;
-	if Cowardly Avisurite is visible, say "The [The printed name of the Cowardly Avisurite] [one of]cowardly makes a run towards the stairs[or]goes through the [Noun][stopping].";
+	if Cowardly Avisurite is visible, say "The [printed name of the Cowardly Avisurite] [one of]cowardly makes a run towards the stairs[or]goes through the [Noun][stopping].";
 	continue the action;
 	
 Instead of giving something to an Avisurite:
@@ -1443,18 +1438,18 @@ instead of showing something to an Avisurite:
 	say "That probably not a good idea.";
 
 
- 
 Section - The Natives
 
 Some Natives are people. The description of The Natives is "These intelligent little furry creatures that look like a cross between a rabbit, a squirrel and a mouse and do not stand not even a foot tall. You estimated their average height to be about 23 centimeters, including their bunny-like ears. They have a bushy squirrel-like tail and mouse-like whiskers and hands and feet. They have three horns on their heads. They do not appear to be very advanced in terms of technology. Based on what you see it appears to be in their version of the stone age, or at least the culture or people or tribe or band or whatever this peculiar group is part of. There are about 27 of them around you. They seem to be only wearing [necklaces], [leather] and [fur pelts]. They are carrying [torches], [spears], [bows] and [quivers] full of arrows. But they do not seem to be posing any threat to you, at least not now. In fact it seems they are trying [if Follow the Natives is happening]to get you to follow them somewhere[otherwise]tell you something[end if]." Understand "Locals", "Rodent People", "Rabbit Squirrel Mouse Rat people" and "indigenous form of intelligent life" as the Natives.
 
 The Natives hold some torches, some spears, some bows and some quivers. The natives wear some necklaces, some leather and some fur pelts.
 
-The description of  torches is "A tiny torch that the native used to light their way through the night." The description of  spears is "A 'long' pointy pole weapon that you are assuming is like the bows that the native brought to defend themselves." The description of bows is "A simple range weapon that you are assuming is like the spears that the native brought to defend themselves." The description of quivers is "What the natives are using to carry arrows for their bows in." Understand "arrows" and "quiver" as quivers. The description of necklaces is "They are made out of a wide variety of stuff." The description of leathers is "Most of the leather these people wear seems to be scaly". The description of fur pelts is "Fur on fur."
+The description of torches is "A tiny torch that the native used to light their way through the night." The description of  spears is "A 'long' pointy pole weapon that you are assuming is like the bows that the native brought to defend themselves." The description of bows is "A simple range weapon that you are assuming is like the spears that the native brought to defend themselves." The description of quivers is "What the natives are using to carry arrows for their bows in." Understand "arrows" and "quiver" as quivers. The description of necklaces is "They are made out of a wide variety of stuff." The description of leathers is "Most of the leather these people wear seems to be scaly". The description of fur pelts is "Fur on fur."
 
 carry out shooting the Natives with a plasma blaster:
 	say "You fire your [second noun] into the air, scaring away the natives. Mabel looks at you and yells, 'What is that for?'[paragraph break]'I have have enough of those stupid crazy little things,' you reply back to her.[paragraph break]She look at you in disbelief. 'Did the war change you?' She asks.[paragraph break]'Of course it did,' you say, 'war changes everything it touches. Every living thing in this universe changes everything it touches. It a crude world out, well everywhere. Even if the comfort of our own home is not safe. Every living thing is fighting for its survival. I bet you they were not different. Franky, especially after what you have been through these past weeks, I am shocked that you do not understand that.'[paragraph break]'True,' Mabel says angrily, 'but that does not give you an excuse to be a jerk.'[paragraph break]You get some thought to what she said and you reply back, 'Perhaps you are right about that, but I am not taking chances. We only have each other right now.' And with that you go into the pod. It is a couple minutes before Mabel follows you in.";
 	now turnsInPod is 5;
+	stop the action;
 	
 Instead of attacking the Natives:
 	say "You throw your fist at one of the rodent creatures. But you before you have a chance to hit [one of]them[or]it[or]him[or]her[sticky random] all the natives has the natives ran away. Mabel look at you and asks, 'What is that for?'[paragraph break]'They were starting to get on my nerves,' you reply back to her.[paragraph break]She look at you in disbelief. 'Did the war change you?' She asks.[paragraph break]'Of course it did,'you say,'war changes everything it touches. Every living thing in this universe changes everything it touches. Even more some with they fight or otherwise interaction with each other. It a crude world out, well everywhere. Even if the comfort of our own home is not safe. Every living thing is fighting for its survival. I bet you they were not different. Franky, especially after what you have been through these past weeks, I am shocked that you do not understand that.'[paragraph break]'True,' Mabel says angrily, 'but that does not give you an excuse to be a jerk.'[paragraph break]You get some thought to what she said and you reply back, 'Perhaps you are right there sis, but I am not taking chances.' And with that you go into the pod. A minute later your sister you joins you in the pod.";
@@ -1484,19 +1479,19 @@ The Desert is a region. Some hawks are in the Desert.  Wildlife is in the Desert
 Wildlife is a Backdrop. The Description of wildlife is "Along with a wide variety of plants this portion of the Desert is unexceptionally filled with all kinds of animals. You occasionally cross paths with them as you make your way through their home. [paragraph break][one of][one of]You currently do not see much around you right now.[or]The '[hawks]' are still circling above you[or]These tiny rabbits looking things pop in and out of holes in the ground and standing up on their hind legs like prairie dogs or meerkats. They appear to have three horns on their head.[or]'Birds' with  [one of]soar through the air with their[or]walk around on both their hind limbs and folded[as decreasingly likely outcomes] pterosaur-like wings.[purely at random][or]You currently do not see much around you right now [or]Jellyfish’ full of air sacs of various sizes float around in the air almost like balloons.[or]A [one of]'lizard'[or]'snake'[or]Moderately Large Six-legend 'Crab'[or]squirrel-rat thing[or]prairielope[at random] goes past you, then makes its way up the dunes.[or]You see a yellow fox or coyote looking thing with a rocket strapped to it chasing after a purple and green pterosaur-winged road runner going by(?)[or]Far in the distance you see an herb of an animal transvesting the desert. They are big with relatively long necks. They look vaguely like a stegosaurus, but instead the plates are on the tail and the strike are on the back along with three camel-like humps.[as decreasingly likely outcomes]".
 Understands "animals" and "life" as wildlife.
 
-Sand is a backdrop. Sand is in Desert. The Description of Sand is "There are two opinions on sand:
+Dirt is a backdrop. Dirt is in Desert. The description of Dirt is "There are two opinions on sand:
 [line break]One: 'I don’t like sand. It’s coarse and rough and irritating and it gets everywhere.'
 [line break]Two: 'I like sand. Sand is squishy.'
 [line break]In deserts people tend towards the first."
+The printed name of dirt is "sand". Understand "sand" and "the sand" as the dirt.
 
 Hawks are a Backdrop. The Description of hawks is "You look up. You see three of 'hawks' that previously tried to eat your fallen compatriots soaring high above you, they rarely ever seem to flap their feathery pterosaur-like wings, circling like vultures."
 
 Plants is a Backdrop in Desert. The Description of the plants is "There are many plants that inhabit this seemingly barren wasteland. The most common variety appears to be these short thorny bushes. Though there are a few trees here and there."
 
-Sleeping Bag is a kind of wearable closed container. Sleeping bag are usually openable.
+Sleeping Bag is a kind of wearable closed openable container.
 
-The Avisurite Fort and Dunes are backdrops. Dunes are in Crashsite and Sand Dunes. The Avisurite Fort is in Crashsite and Sand Dunes. Understand "Sand dunes" as dunes.
-
+The Avisurite Fort and Dunes are backdrops. Dunes are in Crashsite and Dune Valley. The Avisurite Fort is in Crashsite and Dune Valley.
 The Description of the Dunes is "Hills of sand all across the Deserts.".
 The rectangular base and the turrets are parts of the Avisurite Fort.
 
@@ -1506,7 +1501,7 @@ The description of rectangular base is "This is the base of the Fort."
 
 The description of turrets is "The fort has three medieval-looking towering circular spire-like turrets. Why do you feel like you are going to have to go up one like the hero of some cheesy fairy tale?" Understand  "towers" as turrets.
 
-The sky is a backdrop in Desert. The Description of the sky is "[if starset is happening]It is evening time and the [the planet's star] is setting. The Sky is a beautiful painted canvas of orange red, yellow, blue and purple. Above you see those [hawks] that tried to eat your fallen comrades after you first wander out of the pod to explore the surrounding area. The air is starting to cool, yet it is still unbearably hot.[otherwise]You look at the nightsky. It is dark and full of countless stars. There almost no light pollution this planet, so you can see many star. So many in fact, it almost look like you are in space. The two larger of the planet's [moons] hover in the sky next together.[end if]". The planet's star is a backdrop in Desert. Understand "sunset", "starset", "setting star", "host star", "yellow dwarf" and "sun" as the planet's star. The Description of the planet's star is "Over to the west the planet's star is setting. Very few people in the known universe have never seen a starset in some form before. They are not really that special, but they do have their different and they sure are beatiful." Moons are a backdrop. The description of moons is "You can see the two largest moons of the planet in the sky. One is dark gray the other is orange. They are both next together in the night sky and are wanning gibbouses."
+The sky is a backdrop in Desert. The Description of the sky is "[if starset is happening]It is evening time and the [planet's star] is setting. The Sky is a beautiful painted canvas of orange red, yellow, blue and purple. Above you see those '[hawks]' that tried to eat your fallen comrades after you first wander out of the pod to explore the surrounding area. The air is starting to cool, yet it is still unbearably hot.[otherwise]You look at the nightsky. It is dark and full of countless stars. There almost no light pollution this planet, so you can see many star. So many in fact, it almost look like you are in space. The two larger of the planet's [moons] hover in the sky next together.[end if]". The planet's star is a backdrop in Desert. Understand "sunset", "starset", "setting star", "host star", "yellow dwarf" and "sun" as the planet's star. The Description of the planet's star is "Over to the west the planet's star is setting. Very few people in the known universe have never seen a starset in some form before. They are not really that special, but they do have their different and they sure are beautiful." Moons are a backdrop. The description of moons is "You can see the two largest moons of the planet in the sky. One is dark gray the other is orange. They are both next together in the night sky and are wanning gibbouses."
 
 
 Section 0 - The Pod
@@ -1516,7 +1511,7 @@ The Pod Interior is a room. "This was the pod you and four others used to escape
 Three Sleeping Bags are in the Pod Interior. 
 
 To say communication unit description:
-	say "This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby. You would try to see if you can get in contact with other surviors, but [if starset is happening] the Princess is right there. You have to go try saving her, even if you kill yourself doing it. You know she would do the save for you[otherwise]if others did survive they probably already sent for help by now if they could. But what if everyone who survived thought that someone else would, then we all would be stuck here for a long time. [first time]Perhaps not long enough to start a new civilization of your own, hopefuly[only][end if].  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. [if Communications Housing is open]Its door is open attached to the ceiling[otherwise]it is closed[end if]";
+	say "This is the controls for all the communications for the escape pod. The pod has two forms of communications, a hyperspace radio which is broken. It also has a regular old fashion radio as a backup or to communicate with people nearby. You would try to see if you can get in contact with other survivors, but [if starset is happening] the Princess is right there. You have to go try saving her, even if you kill yourself doing it. You know she would do the save for you[otherwise]if others did survive they probably already sent for help by now if they could. But what if everyone who survived thought that someone else would, then we all would be stuck here for a long time. [first time]Perhaps not long enough to start a new civilization of your own, hopefully[only][end if].  Anyway the control for both forms of communications are right next to each other and Right above them is the Housing for its internal components. [if Communications Housing is open]Its door is open attached to the ceiling[otherwise]it is closed[end if]";
 
 The communication unit is an fixed in place open unopenable container in the Pod Interior. The description of the communication unit is "[communication unit description].". Understand "Pod's communications", "comms", "comms unit", "radio" and "pod's comms unit" as communication unit.
 
@@ -1534,8 +1529,8 @@ Communications is a fixed in place device. Communications is inside the communic
 
 Hyperspace communications is a fixed in place device. Hyperspace communications is inside the communication unit.  The description of Hyperspace Communications is "This is the hyperspace communications unit. It sends radio waves through hyperspace instead of, well, normal space. It is broken. If you are lucky, there are other survivors out there with a working hyperspace radio and are putting it to good use. [if Starset has not ended]Though it would be nice if you could fix it yourself. It would certainly be nice to know that help is coming[otherwise if stealing parts has ended]Perhaps you can try using the parts you stole to fix it and contact someone for help[end if]." Understands "hyperspace radio", "hyperspace comms" and "hyperspace radio communications" as hyperspace communications. 
 
-Communications housing is a fixed in place closed openable container. Communications housing is inside the communication unit. The description of communications housing is "This is the housing for all the parts of the pod of the communication unit." The broken parts are a radio parts in communications housing. The description of broken parts is "These are the broken parts of the hyperspace radio." Working parts are a fixed in place radio parts in communications housing. The description of working parts is "These are the still working parts for the pod's communications units." Understand "broken components" as broken parts.
-Understand "Working components" as working parts .
+Communications housing is a fixed in place closed openable container. Communications housing is inside the communication unit. The description of communications housing is "This is the housing for all the parts of the pod of the communication unit." The broken parts are a radio parts in communications housing. The description of broken parts is "These are the broken parts of the hyperspace radio." The working parts are a fixed in place radio parts in communications housing. The description of working parts is "These are the still working parts for the pod's communications units." Understand "broken components" as broken parts.
+Understand "working components" as working parts .
 
 Instead of taking working parts:
 	say "There is no need to remove these. They are working";
@@ -1578,7 +1573,7 @@ Carry out switching on the Hyperspace Communications:
 Nope. It still hasn't magically fixed itself[stopping].";
 	otherwise:
 		say "You and Mabel fiddles with the dials of the control panel for some time before you two manage to get in contact with a communication operator for a Federation Space Force patrol's flag ship. You tell them what happened and they inform you that others have already contacted them and they will be there in a few hours. You and Mabel decide to get some sleep before they arrive. You are awakened in the early hours of the morring before sunset to the sounds of a space craft landing somewhere nearby. You look over at Mabel's sleeping bag and find that she has already woke up. You find her standing outside the pod's airlock. You see Federation Troop transport ship landing on top of the dunes to your right. You and Mabel climb the dunes and are greeted by five members of space force patrol including an officer as they walk down the ramp of the ship. After the army platoon that they brought with them march down the same ramp and turn towards the fort, [EndText]";
-		end the story saying "Thank you for play testing the game.";
+		end the story;
 		
 after switching on the Hyperspace Communications:
 	silently try switching off the Hyperspace Communications;
@@ -1588,11 +1583,11 @@ Carry out switching off the Hyperspace Communications:
 
 Section 1 - The Dune Valley
 
-The Crashsite is a Room in the Desert. "[one of]You get out of the pod and look around. This is where your escape pod crashed. You are the only one who survived. You are surrounded by steep sand [dunes] in every direction except one. It's just your luck that a few klicks to the north is a towering [Avisurite Fort] where you just know they are keeping Princess Mabel. Despite the fact it clearly has been abandoned at some point in the recent past, it appears that it has found new habitants. All around you are various kinds of [wildlife] including a few different kinds of [plants] and those '[hawks]' flying high above you in the [sky][or]This is where your escape pod crashed. You are the only survived. Your fallen compatriots now lay beside the pod lying beneath the [parachute] in makeshift body bags, so that those 'hawks' and other wildlife will not  feast upon their corpses. You see to the north a [Avisurite Fort] not far off from your crashed pod. In every other direction there is only [dunes][stopping]. In side of the Crashsite is the [escape pod], it's [airlock] [if airlock is open]wide open[else]shuted closed[end if]. You can see the [Avisurite Fort] from here."
+The Crashsite is a Room in the Desert. "[one of]You just outside out of the pod and look around the desert. This is where your escape pod crashed, partily buried in the [sand]. You are the only one who survived. You are surrounded by steep sand [dunes] in every direction except one. It's just your luck that a few klicks to the north is a towering [Avisurite Fort] where you just know they are keeping Princess Mabel. Despite the fact it clearly has been abandoned at some point in the recent past, it appears that it has found new habitants. All around you are various kinds of [wildlife] including a few different kinds of [plants] and those '[hawks]' flying high above you in the [sky][or]This is where your escape pod crashed. You are the only survived. Your fallen compatriots now lay beside the pod lying beneath the [parachute] in makeshift body bags, so that those 'hawks' and other wildlife will not  feast upon their corpses. You see to the north a [Avisurite Fort] not far off from your crashed pod. In every other direction there is only [dunes][stopping]. In side of the Crashsite is the [escape pod], it's [airlock] [if airlock is open]wide open[else]shuted closed[end if]. You can see an [Avisurite Fort] from here."
 
 The player is in the Crashsite.
 
-The escape pod is a fixed in place thing in Crashsite. The Description of the escape pod is "This was the pod you and four other users used to escape the attack on the fleet. It got hit and crashed here. From the outside you can tell it is badly damaged. the side is a little picture of the [the flag of the Democratic Federation].". Understand "pod outsides", "escpace pod outsides", "escpace pod's outsides", "pod's outsides", "pod exterior", "pod's exterior", "escape pod exterior" and "escpace pod's exterior" as the escape pod. The flag of the Democratic Federation is a part of the escape pod. The Description of the flag of the Democratic Federation is "An azure field with a white neolithic hand negative at its center with a wreath below it and above it five different color dots forming a crescent pattern forming a circle with it."
+The escape pod is a fixed in place thing in Crashsite. The Description of the escape pod is "This was the pod you and four other users used to escape the attack on the fleet. It got hit and crashed here. From the outside you can tell it is badly damaged. the side is a little picture of [the flag of the Democratic Federation].". Understand "pod outsides", "escpace pod outsides", "escpace pod's outsides", "pod's outsides", "pod exterior", "pod's exterior", "escape pod exterior" and "escpace pod's exterior" as the escape pod. The flag of the Democratic Federation is a part of the escape pod. The Description of the flag of the Democratic Federation is "An azure field with a white neolithic hand negative at its center with a wreath below it and above it five different color dots forming a crescent pattern forming a circle with it."
 
 
 The airlock is a open door. The airlock is inside of the Crashsite and outside of the Pod Interior. The Description of the airlock is "This is the pod's airlock. It is [if airlock is open]wide open[else]shuted closed[end if]."
@@ -1614,15 +1609,15 @@ instead of pushing parachute:
 instead of pushing parachute to a direction:
 	try taking parachute;
 	
-North of the Crashsite is Sand Dunes. Sand Dunes is a room in desert. "Travel through the valley of sand [dunes] you pod crash at the end of. To the south is where your Pod crashed. To the North is the [Avisurite Fort]." 
+North of the Crashsite is  Dune Valley. Dune Valley is a room in desert. "Travel through the valley of sand [dunes] you pod crash at the end of. To the south is where your Pod crashed. To the North is the [Avisurite Fort]." 
 
-After deciding the scope of the player while the location is Sand Dunes:
+After deciding the scope of the player while the location is  Dune Valley:
 	place the Crashsite in scope.
 
 
 Section 2 - Fort Curtilage
 
-Curtilage is a region in desert. Fort frontage and Behind Fort are rooms in Curtilage. The Avisurite Fort is in Curtilage. North of the Sand Dunes is Fort frontage.
+Curtilage is a region in desert. Fort frontage and Behind Fort are rooms in Curtilage. The Avisurite Fort is in Curtilage. North of the  Dune Valley is Fort frontage.
 
 Dunes are in Frontage.
 
@@ -1685,8 +1680,6 @@ Northeast of Lakeside Oasis is Behind Fort. Northwest of the Bush is Behind Fort
 
 Section 4 - More Desert
 
-[Expanding the world]
-
 Empty Desert is a room in the Desert. "You are surrounded by empty desert for klicks around. There is nothing out here, but [sand] and the occasional sign of life. It is easy to get lost out here. You might find yourself walking in circles. [if Mabel is in Empty Desert and turnsTraversingDesert > 0][Mabel] is still following you.[end if]"
 
 Dunes are in empty desert.
@@ -1727,7 +1720,7 @@ The holdout fort is a region.
 
 Section 1 - Fort Entrance
 
-The Entrance is a dark room in the holdout fort. "This tunnel is the entryway into the fort. Standing at the northern end of the Tunnel, blocking your way is [Grue] guard cowarding in the light. To the south is the [The mouth of entrance] tunnel".
+The Entrance is a dark room in the holdout fort. "This tunnel is the entryway into the fort. Standing at the northern end of the Tunnel, blocking your way is [Grue] guard cowarding in the light. To the south is the [mouth of entrance] tunnel".
 Before printing the name of a dark room, if the room is Entrance, say "Entrance.".
 
 Rule for printing the description of a dark room:
@@ -1741,7 +1734,7 @@ The Walls are a Backdrop.
 The Walls are in the Holdout Fort and Curtilage.
 The Description of the Walls is "They are just the walls of the fort."
 
-The mouth of the entrance is a door. The mouth of the entrance is north of Fort Frontage and south of The Entrance.
+The mouth of the entrance is an open unopenable door. The mouth of the entrance is north of Fort Frontage and south of The Entrance.
 The description of mouth of entrance is "This is an opening of the [if the Entrance is dark]dark [end if]entrance into the fort[if the Entrance is lighted] where the Grue stays guard[end if].".
 
 The light switch is a fixed in place device in The Entrance. The Description of the light switch is "It is a simple single plastic lightswitch."
@@ -1775,19 +1768,19 @@ Instead of switching off the light switch:
 
 The Grue is in the Entrance.
 
-Before Mabel going to the Entrance for the first time:
-	if the player is in the location of Mabel, say "Mabel look at the Grue. 'What the?', she exclaim, 'Is that a Grue?'[paragraph break]
-'Yes I'm', the Grue tells her in English. He then turns to you and then asks in a very simplified version of Grueish, 'Princess ask If I Grue Right?' You nod your head. [if the Final Duel is not happening] 'I do not know Arkonkian. I know some English, some Spanish, some Mandarin and some Tharsisian,' the Grue adds[end if][paragraph break]You tell Mabel, 'Do not be scared, me and him have an understanding.' Mabel seems eased up upon hearing that, but she keeping an eye on the Grue.'";
+After Mabel going to the Entrance for the first time:
+	if Mabel is in the location of the player, say "Mabel look at the Grue. 'What the?', she exclaim, 'Is that a Grue?'[paragraph break]
+'Yes I'm', the Grue tells her in English. He then turns to you and then asks in a very simplified version of Grueish, 'Princess ask If I Grue Right?' You nod your head. [if the Final Duel is not happening] 'I do not know Arkonkian. I know a little English and a little Mandarin,' the Grue adds[end if][paragraph break]You tell Mabel, 'Do not be scared, me and him have an understanding.' Mabel seems eased up upon hearing that, but she keeping an eye on the Grue.'";
 	Now Has Mabel seen the Grue is true;
 
 Section 2 - Inside Fort
 
 The Atrium is the rooms in the Holdout fort.
 
-North of the Entrance is the Atrium. The Description of the Atrium is "The atrium is silent. It's very nice looking actually. It is a vast chamber where golden sand still clings to the polished stone of the [walls], remnants of years spent abandoned under unforgiving sun. [if starset has not ended]Evening twilight comes in through[otherwise]Light of the planet's two largest moons shine in from[end if] the [windows ] on the [high ceiling], illuminating the marron [banners] that hanging from the otherwise bare walls, baring a striking [emblem].
+North of the Entrance is the Atrium. The Description of the Atrium is "The atrium is silent. It's very nice looking actually. It is a vast chamber where golden [sand] still clings to the polished stone of the [walls], remnants of years spent abandoned under unforgiving sun. [if starset has not ended]Evening twilight comes in through[otherwise]Light of the planet's two largest moons shine in from[end if] the [windows ] on the [high ceiling], illuminating the marron [banners] that hanging from the otherwise bare walls, baring a striking [emblem].
 [paragraph break]You look around there are lots of [crates]. There are also three doors. One to the north that is open. As well as one to the west and another to the east which are both closed. There is also the big opening in the south which you entered the fort from.[if starset has not ended and avisurite guard is undefeated] There is alone Avisurite guard. You can either fight with the guard(which is probably not a good idea), try going north to sneak among the crates to get to the northern door, or try seeing what is behind the other two doors.[end if]"
 
-Sand is in the Atrium.
+The Sand is in the Atrium.
 
 Crates are scenery in Atrium. The Description of the crates is "There are many wooden crates scattered all over the Atrium.";
 
@@ -1798,9 +1791,6 @@ The description of The western door is "This is a door, it is labeled in the Avi
 
 The eastern door is a door. The eastern door is east of the Atrium and northeast of the second floor landing. The eastern door is unopenable and locked.
 The description of The eastern door is "This is a door, it is labeled in the Avisurite language of Kawkawgrrrr, 'eastern wing, living quarters'.  You probably do not need to go in there."
-
-[instead of opening western door:
-	say "The door appear to be locked, beside there no way you can get to it without being seen by the Guard.";]
 
 instead of opening eastern door:
 	if starset has not ended:
@@ -1831,7 +1821,7 @@ bottom of prison turret, top of prison turret and Princess room are rooms in hol
 
 The northern door is an open door. The description of the Northern door is "The sign above this door says in Kawkawgrrrr 'Prison Tower'." The northern door is north of the Atrium and south of bottom of prison turret.
 
-The bare spiral staircase is a door.
+The bare spiral staircase is a open unopenable door.
 The bare spiral staircase is up of bottom of prison turret and down of top of prison turret. 
 The description of the bottom of prison turret is "You are at the base of the prison tower. Behind you is the [northern door] used to enter from the Atrium. [one of]Looking around you see that it's[or]The room is[stopping] just a bare empty space at the bottom of a medieval looking stone tower with just a [bare spiral staircase] going up. [first time]'Okay, what is this a fairy tail? you think to yourself, 'I mean there are dragons, trolls and quests. Like [if dimetrodon is dead] you already slayed one dragon[otherwise]fought a war against a race of sort of 'dragons'[end if], make a deal with a troll and now you are storming a castle and climb a tower to save a princess from like a bundle of other dragons. It is the 4th millennium C.E., A.D. or whatever you want to call it and this is reality. This is reality!!!! What the heck? What nexts? Some epic twisted that? Like has the Princess secretly run away to marry the Grand Speaker of the Consortium? Is the Chancellor of the Federation actually an evil derk sorceress planning on taking over the galaxy? Has the President been a robot this whole time? Is a wizard going to show up out of not where and save the day at the last moment? Are Avisurites really five gnomes stacked up on top of each other.'
 [line break]'Just take a deep breath Mason', you tell yourself 'just take a deep break and let it all go. Just calm yourself now and go up the stairs. The long stairs up the tall tower.'[only]". 
@@ -1928,7 +1918,7 @@ instead of Climbing the bed:
 		
 Instead of attacking the bed:
 	if starset is happening:
-		say "The bed to shakes The Princess wakes up a bit surprised, worried and annoyed. 'Mason? What are you doing here?' She asks you.[paragraph break]'Uh, waking you up my dear sister, duh.' you laugh as you stand up out of bed. She sighs in frustration.";
+		say "The bed to shakes The Princess wakes up a bit surprised, worried and annoyed. 'Mason? What are you doing here?' She asks you.[paragraph break]'Uh, waking you up my dear sister, duh,' you laugh as you stand up out of bed. She sighs in frustration.";
 		now Mabel is awake;
 	otherwise:
 		continue the action;
@@ -1971,7 +1961,7 @@ After shooting something with something in the Princess :
 Mabel walks over to a window and looks outside. 'It is the tail end of dusk, you psycho,' she says, still extremely irritated.
 You reply, 'Will, I am your brother after all.'[paragraph break]
 'What is that supposed to mean?', she says crossing her arms.[paragraph break]
-'You know exactly what I mean.' you giggle.[paragraph break]
+'You know exactly what I mean,' you giggle.[paragraph break]
 Mabel replies, 'You are too old for this Mason.' She then walk over to you and hug you, 'But, I guess somethings never change.'[paragraph break]
 Hugging her back, you say 'No, they don't. Do they?' You two then break away. 'Just like you being a bit well, you know.'";
 		now Mabel is awake;
@@ -2002,13 +1992,7 @@ To say panelDescription:
 
 Fort control panel is a kind of a device. A fort control panel is fixed in place. A fort control panel is usually switched on. The description of fort control panel is "[panelDescription][if switched on] glowing sky blue, orange and white[end if]."
 
-instead of listening:
-	if the location of the player is fort command center and control panel #4 is switched on:
-		say "You can hear something coming control panel #4. You briefly turn your attention to the panel";
-		RadioSound;
-		try examining control panel #4;
-	otherwise:
-		continue the action;
+
 
 control panel #1 is a fort control panel in fort command center. Understand "number/num/no 1" and "control panel number/num/no 1" as control panel #1.
 control panel #2 is a fort control panel in fort command center. Understand "number/num/no 2", "control panel number/num/no 2" and “holographic display controls” as control panel #2.
@@ -2087,7 +2071,7 @@ carry out an actor cutting hyperspace radio parts:
 	if hyperspace radio parts are uncutted:
 		if control panel #4 is switched on:
 			if Actor is visible, say "[refer to the actor] start cutting the wires connecting the parts that you need from the rest of the panels.";
-			decrease the current hit points of the the actor by 5;
+			decrease the current hit points of the actor by 5;
 			unless the Actor is Mabel and Actor is not visible, 
 				say "'ZAP! [if Mabel is asleep] You dumby. You[otherwise] Oh no, you guys[end if] forgot to turn off the panel, now [refer to the actor] has been electrocuted. [paragraph break][refer to the actor] take 5 damage.[Current Health of the actor]";
 			otherwise:
@@ -2111,7 +2095,6 @@ instead of taking hyperspace radio parts:
 		say "They appear to be attached to the panel. Try getting them loose first.";
 	otherwise:
 		continue the action;
-
 
 
 Part - Scenes
@@ -2163,12 +2146,22 @@ Returning home begins when Mabel is awake.
 when Returning home begins:
 	now the printed name of Mabel is "Mabel";
 	silently try Mabel getting off bed;
-	say "'Oh, okay. Right. But seriously, what are you doing here? Rescuing me. I really appreciate it and I understand I am the heir to the throne, so everyone would want to be back home safely. But you already fought in the war, shouldn’t have put it on yourself to come here to save me. Besides we both know that I am more than Rescuing myself, I am not some Damsel in distress in some fairy tale. In fact I was slowly coming up with a plan to break out of here.'[paragraph break]'But then what Mabel?' You ask her, 'There is nothing but desert for kilometers around. Can you rescue yourself from heat stroke or thirst.'[paragraph break]'I am well aware that is the one thing I could not figure out. But I guess I do not have too now that you are here.' she replies.[paragraph break]'Plus you know I can not let anything happen to me baby sister,' you tease her as you used to do all the time. She has always been the more childish one between the two of you, destipe being three minutes older. Though you do know she is indeed more than able to handle herself. In fact she wanted to fight in the war too, but she is the heir and you are the spare. That is actually one of the few times that you actually work in your favor.[paragraph break]You decided to take some time explaining the entire situation to her. After filling her up to speed about your predicament, she asks, 'So what exactly is the plan?'[paragraph break]You hand her the spare blaster pistol and tell her, 'follow me'.[paragraph break]'Shouldn't I, like, have a permit or something to use this?' she asks you to point it to the ground. [paragraph break]'Not it this situation,' You tell her, 'I am not going to leave my twin sister defenseless as we risk our lives trying to get out of here.'";
+	wait for any key;
+	say "'Oh, okay. Right. But seriously, what are you doing here? Rescuing me. I really appreciate it and I understand I am the heir to the throne, so everyone would want to be back home safely. But you already fought in the war, shouldn’t have put it on yourself to come here to save me. Besides we both know that I am more than Rescuing myself, I am not some Damsel in distress in some fairy tale. In fact I was slowly coming up with a plan to break out of here.'[paragraph break]
+'But then what Mabel?' You ask her, 'There is nothing but desert for kilometers around. Can you rescue yourself from heat stroke or thirst.'[paragraph break]
+'I am well aware that is the one thing I could not figure out. But I guess I do not have too now that you are here,' she replies.[paragraph break]";
+	wait for any key;
+	say "'Plus you know I can not let anything happen to me baby sister,' you tease her as you used to do all the time. She has always been the more childish one between the two of you, despite being three minutes older. Though you do know she is indeed more than able to handle herself. In fact she wanted to fight in the war too, but she is the heir and you are the spare. That is actually one of the few times that you actually work in your favor.[paragraph break]
+You decided to take some time explaining the entire situation to her. After filling her up to speed about your predicament, she asks, 'So what exactly is the plan?'[paragraph break]
+You hand her the spare blaster pistol and tell her, 'follow me'.[paragraph break]
+'Shouldn't I, like, have a permit or something to use this?' she asks you to point it to the ground. [paragraph break]
+'Not in this situation,' You tell her, 'I am not going to leave my twin sister defenseless as we risk our lives trying to get out of here.'[paragraph break]";
 	now Mabel carries spare blaster;
 	now Did Mabel do something is true;
 	move Holdout Leader to the Atrium;
 	move Avisurite Soldier to the Atrium;
-	
+	wait for any key;
+	try looking;
 	
 Returning home ends quietly when Mabel is in CrashSite for the first time and Stealing parts has not ended.
 Returning home ends victoriously when Mabel is in Crashsite for the first time and Stealing parts has ended.
@@ -2179,20 +2172,23 @@ When Returning home ends victoriously:
 When Returning home ends victoriously:
 		say "You look at the Pod. Now you can fix its hyperspace radio and return back home.";
 	
-[Instead of going south during The Returning home:
-	say "You and Mabel head down the stairs...
-	[paragraph break]To be countine....";]
-	
 To say EndText:
-	say "They lead you both aboard and asks if you guys need anything. You and your sister both look at each other. [paragraph break]
-'I think we both just want breakfast,' you reply.
-[paragraph break]'Yes, just Breakfast,' Mabel says. 
-[paragraph break] The commanding officer quickly looks at both of you and says, 'Okay then, I will make sure there is something to eat for both of you when we get back to the flag ship. In the meantime just relax.'
- [paragraph break]And with that the ship transport took off. Once it lands in the flag ship's hangar, you are quickly taken to the ship's mess hall with the other survivors and fed breakfast. Once you both have eaten your meal you are both led to a place to have quick medical diagnoses run on both of them. After you pass with flying colors, you are allowed to clean yourself up and check on your sister. After learning she is in fact doing fine, at least physically, you know that the bulk of the Holdout forces has been rounded up. The ones that have been catched alive will be handed over to the Consortium which will figure out what they want to do with them. The rest are believed to be on the run.
-[conditional paragraph break] It takes you and your Sister three days before you manage to get back home. Once there your family threw a small celebration, and pretty much everyone was happy that you both made it home alive.
-[paragraph break]Author's note: In case you are wondering whatever happens to The Grue. Well through their mercenary they eventually make enough money to return back to the Grue Home World, where he went on to philosophical treatise that not only change Grue philosophy, but the philosophy of all species, peoples, cultures and civilizations across the local group. Even people as far as Andromeda sing its praises. Furthermore the Grues are big fans of the idea of a philosopher king, the fame of his work led him down the path of being elected the Emperor of the Grues. But, sadly his reign was unfortunately cut short after 8 years when he learned the hard way that even a Grue can eat too much. He was 124 Federation standard years old. Which is old even in Grue terms, just not that old.";
+	say "They lead you both aboard and asks if you guys need anything. You and your sister both look at each other. [paragraph break]";
+	wait for any key;
+	say "'I think we both just want breakfast,' you reply.[paragraph break]
+'Yes, just Breakfast,' Mabel says. [paragraph break]
+The commanding officer quickly looks at both of you and says, 'Okay then, I will make sure there is something to eat for both of you when we get back to the flag ship. In the meantime just relax.'[paragraph break]";
+	wait for any key;
+	say "And with that the ship transport took off. Once it lands in the flag ship's hangar, you are quickly taken to the ship's mess hall with the other survivors and fed breakfast. Once you both have eaten your meal you are both led to a place to have quick medical diagnoses run on both of them. After you pass with flying colors, you are allowed to clean yourself up and check on your sister. After learning she is in fact doing fine, at least physically, you know that the bulk of the Holdout forces has been rounded up. The ones that have been catched alive will be handed over to the Consortium which will figure out what they want to do with them. The rest are believed to be on the run.[paragraph break]";
+	wait for any key;
+	say "It takes you and your sister three days before you manage to get back home. Once there your family threw a small celebration, and pretty much everyone was happy that you both made it home alive.[paragraph break]";
+	wait for any key;
+	say "Author's note: In case you are wondering whatever happens to The Grue. Well through their mercenary they eventually make enough money to return back to the Grue Home World, where he went on to philosophical treatise that not only change Grue philosophy, but the philosophy of all species, peoples, cultures and civilizations across the local group. Even people as far as Andromeda sing its praises. Furthermore the Grues are big fans of the idea of a philosopher king, the fame of his work led him down the path of being elected the Emperor of the Grues. But, sadly his reign was unfortunately cut short after 8 years when he learned the hard way that even a Grue can eat too much. He was 124 Federation standard years old. Which is old even in Grue terms, just not that old.";
+
 
 section - fix radio ending
+
+hyperspace radio parts, broken parts and working parts are plural-named.
 	
 switchesControlPanel is a truth state that varies.
 switchesControlPanel is usually false.
@@ -2252,7 +2248,7 @@ When Fixing the Radio begins:
 You nod your head.[paragraph break]
 'Do not worry, I will have it fixed in no time,' she says.[paragraph break]
 You tell her if she needs any help do not be afraid to ask. She tells already she knows before she skips over to the escape pod.";
-	otherwise if ((the current hit points of the Player < 10) and ((the current hit points of Mabel > the current hit points of the Player) or (the current hit points of the Player < 5 and current hit points of Mabel > 10))) or Guard Fight has happened or Mabel asking for knife ended noly:
+	otherwise if ((the current hit points of the Player < 10) and (the current hit points of Mabel > the current hit points of the Player)) or (Guard Fight has happened and Mabel asking for knife ended noly):
 		say "Mabel looks over at you. 'You know brother you are looking pretty tired,' she says to you, 'how about I fix the hyperspace comms? After all, I am much more skilled and experienced in this area than you are.'";
 		try Mabel requesting the hyperspace radio parts;
 		say "You tell her if she needs any help do not be afraid to ask. She tells she already knows as she skips over to the escape pod.";
@@ -2275,10 +2271,14 @@ section - following ending
 Encountering the Natives is a scene. Encountering the Natives begins when Returning home ends quietly;
 
 When Encountering the Natives begins:
-	say "You and Mabel has return to the crashsite. Just has you two decide to start making camp for the night you see lights not even a foot above the ground. At first you just assume that it is just a herd of some bioluminescent organisms traveling by, but then Mabel asks, 'Is that fire?' And indeed it is. The lights comes closers. It is not long before you can see that the light was being emitted by little tiny torches carried by little rodent-like creatures. They look like something cross between a rabbit, a mouse and a squirrel, have possible thumbs and walk on their hind legs. Along with torches they carried spears, bows and arrows. The one article of clothing they appear to be wearing is pelts and leather wrapped around their bodies and necklace hanging from their neck. They seem to be in their version of the stone age. Galactic laws and treaties strictly limit contact with civilizations that do not have interstellar travel, even more so with ones that appear to barely invent, well anything beyond basic tools. Though by the look of it, you do not have a choice in the matter. One who must be their leader approaches you and Mabel. He look you both up and down. He makes a series of noise that you are pretty sure was him saying something. Whether it was to the two of you or his friends you are not sure. Two more of them approach you, carrying a fur blanket on which there is something round rolling upon as it is carried. They both look younger than most of the rest and you think one is female and the other is male, but to be honest you are not even sure if correct in assuming the first one is their leader or a him or even anything. The 'young man' and 'lady' set down the blanket they are carrying down in front of you. The object that was carried within it looked exactly like an apple. The three look at you. The leader points his spear at you and speaks again. It seems they are trying to tell you something, but you can not speak their language and they surely will not know any that you or your sister can. But you think they want you to take the 'apple'. You are not sure if you should, you do not want to break galactic law after all. Perhaps if you and Mabel enter the pod they will get the hint and leave after a while. But maybe you should take the apple. It's probably rude to refuse it. Who knows, they could consider it a great insult worse than any other. You ask Mabel what she thinks. She is not sure herself, but she makes it clear she in favor of taking it.";
+	say "You and Mabel has return to the crashsite. Just has you two decide to start making camp for the night you see lights not even a foot above the ground. At first you just assume that it is just a herd of some bioluminescent organisms traveling by, but then Mabel asks, 'Is that fire?' And indeed it is. The lights comes closers. It is not long before you can see that the light was being emitted by little tiny torches carried by little rodent-like creatures. They look like something cross between a rabbit, a mouse and a squirrel, have possible thumbs and walk on their hind legs. Along with torches they carried spears, bows and arrows. The one article of clothing they appear to be wearing is pelts and leather wrapped around their bodies and necklace hanging from their neck. They seem to be in their version of the stone age. Galactic laws and treaties strictly limit contact with civilizations that do not have interstellar travel, even more so with ones that appear to barely invent, well anything beyond basic tools. Though by the look of it, you do not have a choice in the matter.[paragraph break]";
+	wait for any key;
+	say "One who must be their leader approaches you and Mabel. He look you both up and down. He makes a series of noise that you are pretty sure was him saying something. Whether it was to the two of you or his friends you are not sure. Two more of them approach you, carrying a fur blanket on which there is something round rolling upon as it is carried. They both look younger than most of the rest and you think one is female and the other is male, but to be honest you are not even sure if correct in assuming the first one is their leader or a him or even anything. The 'young man' and 'lady' set down the blanket they are carrying down in front of you. The object that was carried within it looked exactly like an apple. The three look at you. The leader points his spear at you and speaks again. It seems they are trying to tell you something, but you can not speak their language and they surely will not know any that you or your sister can. But you think they want you to take the 'apple'. You are not sure if you should, you do not want to break galactic law after all. Perhaps if you and Mabel enter the pod they will get the hint and leave after a while. But maybe you should take the apple. It's probably rude to refuse it. Who knows, they could consider it a great insult worse than any other. You ask Mabel what she thinks. She is not sure herself, but she makes it clear she in favor of taking it.";
+	wait for any key;
 	now the Natives are in Crashsite;
 	Now the fur blanket is in the Crashsite;
 	now the apple is on the fur blanket;
+	try looking;
 	
 The Apple is a fallen fruit. The description of The Apple is "It looks exactly like a bright red apple."
 
@@ -2287,14 +2287,10 @@ Fur blanket is a supporter. The description of The fur blanket is "It looks like
 Instead of taking Apple:
 	now the player carries the Apple;
 	if the player is in the crashsite, say "You pick up the apple. [one of]T[or]The leader seems to be telling the rest to calm down. Once again t[stopping]he one you believe is a little girl make a gesture that appear to be an attempt to tell you to eat it.";
+	now Did Mabel do something is true;
 	stop the action;
 	
 tried taking blanket is a truth state that varies. tried taking blanket is usually false.
-
-Instead of taking Apple:
-	now the player carries the Apple;
-	if the player is in the crashsite, say "You pick up the apple. [one of]T[or]The leader seems to be telling the rest to calm down. Once again t[stopping]he one you believe is a little girl make a gesture that appear to be an attempt to tell you to eat it.";
-	stop the action;
 	
 instead of taking the fur blanket:
 	if tried taking Blanket is false:
@@ -2302,6 +2298,7 @@ instead of taking the fur blanket:
 		now tried taking Blanket is true;
 	otherwise:
 		say "They are not going to let anyone take it, they already made that clear.";
+	now Did Mabel do something is true;
 	stop the action;
 	
 instead of Mabel taking the fur blanket:
@@ -2310,14 +2307,17 @@ instead of Mabel taking the fur blanket:
 		now tried taking Blanket is true;
 	otherwise:
 		say "'Do you think I want my wrist slapped?' she asks you.";
+	now Did Mabel do something is true;
 	stop the action;
 	
-instead of eating the Apple:
+after eating the Apple:
 	say "It tastes sweet, sour and juicy; just like (a red version of) an Arkonkian Smiths, expect it a bit sweeter. There is also the fact it is red and not green. You offer Mabel a bit. As she takes, you look at the crowds of funny looking rodent people and they seem to be happy about something. The leader walks to you and tugs on your pant leg. He and the others seem to be trying to tell you and mabel to follow them. You are not sure if that is a good idea. You look at Mabel. As she finishes gorging down on the apple while going, 'Mmmmm' she looks up at you and says, 'I think we should follow them, but if you want we can stay here. Whatever you want brother, just tell me.'";
+	now Did Mabel do something is true;
 	now the Apple is nowhere;
 	
 Instead of giving the Apple to Mabel:
 	say "You hand the apple over to Mabel. She takes a bit out of it and seems to fall in love with it instantly. She offers you a bit. You take it. It tastes sweet, sour and juicy;  just like (a red version of) an Arkonkian Smiths, but a bit sweeter. As you hand the rest to her you find the leader tugging on your pant leg. He and the others appear to want you guys to follow them. You are not sure if that is a good idea. You look at Mabel. As she finished gorging down the apple and going, 'Mmmmm' the whole time she looks up at you and says, 'I think we should follow them, or we stay here if you want. Whatever you want brother, just tell me.'";
+	now Did Mabel do something is true;
 	now the Apple is nowhere;
 	
 Report dropping the Apple:
@@ -2336,46 +2336,34 @@ Instead of going north from crashsite when Encountering the Natives is happening
 	say "The Native are blocking your way.";
 
 When Encountering the Natives ends with following:
-	say "As You and Mabel follow the Navites. The only lights are that of the two moons, the stars and the flaming light of the torches. Neither of you are sure of where they are taking you. After a half an hour or some, you spot what is unmistakably a camp fire and two crashed espace federation pods. Turns out that you were not the only survivor after all and apparently the natives have correctly assumed that you and them are together. Well, You all are human, so I guess it is not much of an assumption. Though many scientists consider Arkonkians to be their own separate subspecies. But then again these humans are a very diverse bunch. From dark skin with fiery red hair to fair skin with black hair to brown with naturally blue hair and everything in between. But then again, for all they know you and them could not like each other. [paragraph break]Anyway you guys tell the rodent thing thank you and I think they reply with their version of 'Your welcome' and they leave. We spent the rest of the night with the other survivors in their camp and in the Morrying the federation came to rescue us. A federation Space Force patrol squadron lands right next to the camp. A Space Force patrol officer walks down the ramp. You all welcome her and her patrol members to your camp. After spending so much time talking the other board the spaceships, but you and your sister tell the officer about the holdout and their fort. Her and her men tell you that the federation and the consortium will work together to finger out what to do with with them. with that, [EndText]";
-	end the story saying "Thank you for testing the game.".
+	say "As You and Mabel follow the Navites. The only lights are that of the two moons, the stars and the flaming light of the torches. Neither of you are sure of where they are taking you. After a half an hour or some, you spot what is unmistakably a camp fire and two crashed espace federation pods. Turns out that you were not the only survivor after all and apparently the natives have correctly assumed that you and them are together. Well, You all are human, so I guess it is not much of an assumption. Though many scientists consider Arkonkians to be their own separate subspecies. But then again these humans are a very diverse bunch. From dark skin with fiery red hair to fair skin with black hair to brown with naturally blue hair and everything in between. But then again, for all they know you and them could not like each other. [paragraph break]";
+	wait for any key;
+	say "Anyway you guys tell the rodent thing thank you and I think they reply with their version of 'Your welcome' and they leave. We spent the rest of the night with the other survivors in their camp and in the Morrying the federation came to rescue us. A federation Space Force patrol squadron lands right next to the camp. A Space Force patrol officer walks down the ramp. You all welcome her and her patrol members to your camp. After spending so much time talking the other board the spaceships, but you and your sister tell the officer about the holdout and their fort. Her and her men tell you that the federation and the consortium will work together to finger out what to do with with them. with that, [EndText]";
+	end the story.
 	
 When Encountering the Natives ends with staying:
 	say "Seeing that you and Mabel have decided to go into the pod instead of following them, the Locals give up on whatever they were trying to co you. After watching them leave, Mabel goes to fetch you two each sleeping bag. You both are pretty tired, so it is not longer before you two fall asleep. You are awakened to the first light of the planet's rising star and the sound of a spaceship zipping through the atmosphere. You look over at Mabel's sleeping bag and find that she has already woken up. You get up and see that she is standing outside the pod's airlock. You see Federation Troop transport ship landing on top of the dunes to your right. You and Mabel climb up the dunes and are greeted by five members of the space force patrol including an officer as they walk down the ramp of the ship. After the army platoon that they brought with them march down the ramp and heads towards the fort, [EndText]";
-	end the story saying "Thank you for testing the game.".
+	end the story.
 	
 When Encountering the Natives ends with shooting:
 	say "You and Mabel finger out how to lock the airlock and close it tighted. You never know if the Native will come back. You quickly fall asleep. You are both awakened to the sound of a ship landing nearby. You both head outside to see the Federation Troop transport ship landing on top of the dunes to your right. You and Mabel climb them and are greeted by five members of the space force patrol including an officer as they walk down the ramp of the ship. After the army platoon that they brought with them march down the same ramp and towards the fort, [EndText]";
-	end the story saying "Thank you for testing the game.".
+	end the story.
 	
 turnsInPod is a number that varies. turnsInPod is 0.
 
-Every Turn when the location of the player is Pod Interior:
-	increment turnsInPod;
+Every Turn when Encountering the Natives is happening:
+	if the location of the player is Pod Interior:
+		increment turnsInPod;
 	
-After going a direction when room gone from is Pod Interior:
+After going outside from the Pod Interior when Encountering the Natives is happening:
 	now turnsInPod is 0;
+	continue the action;
 	
 Encountering the Natives ends with staying when turnsInPod is 4.
 
 Encountering the Natives ends with shooting when turnsInPod is 5.
 
 Encountering the Natives ends with following when turnsInPod is 6.
-
-[end the story saying "Thank you for play testing the game.";]
-
-Section - Time
-
-Starset is a Scene.
-Starset begins when play begins. Starset ends when Returning home begins.
-
-When starset ends:
-	now the planet's star is nowhere;
-	now the hawks are nowhere;
-
-Night is a Scene.
-Night begins when Starset ends.
-When night begins:
-	now moons are in desert;
 
 Section - Time
 
@@ -2415,7 +2403,8 @@ The final duel is a scene. The final duel begins when Mabel is in the Atrium for
 
 When the final duel begins:
 	now the western door is open;
-	say "You and Mabel enter the Atrium and see a female Avisurite wearing a Consortium Officer uniform standing in the middle of the room. She looks at both of you and Tweets, Chirps, Barks and Growls before saying in perfect english in a thick angloamerican accent, 'How? How did you make it pass the Grue. They are like my one underling that actually manages to pull their weight around here and you know what it does matter.' She then turn to her soldiers and Hisses in KawKawGrrrrr, 'Attack!!!!!!!'";
+	say "You and Mabel enter the Atrium and see a female Avisurite wearing a Consortium Officer uniform standing in the middle of the room. She looks at both of you and Tweets, Chirps, Barks and Growls before saying in perfect english in a thick angloamerican accent, 'How? How did you make it pass the Grue. They are like my one underling that actually manages to pull their weight around here and you know what it does matter,' She then turn to her soldiers and Hisses in KawKawGrrrrr, 'Attack!!!!!!!'[paragraph break]";
+	wait for any key;
 	now can Mabel attack is true;
 	repeat with Enemy running through Avisurites in the location of the Player:
 		let the gun be a random plasma blaster carried by Enemy;
@@ -2451,16 +2440,14 @@ Every turn during The Final Duel:
 						try Enemy attacking the player;
 					otherwise:
 						try Enemy attacking Mabel;
-				otherwise if enemy is Avisurite Guard and a random chance of 3 in 5 succeeds:
-					try Avisurite Guard attacking the Player;
 			otherwise:
 				if a random chance of 3 in 35 succeeds:
 					if a random chance of 1 in 2 succeeds:
 						try Enemy attacking the player;
 					otherwise:
 						try Enemy attacking Mabel;
-				otherwise:
-					let chosen blaster be a random plasma blaster in the location;
+				otherwise if number of plasma blasters in the location of Enemy > 0:
+					let chosen blaster be a random plasma blaster in the location of Enemy ;
 					try Enemy taking chosen blaster;
 			now the hasAttack of Enemy is false;
 

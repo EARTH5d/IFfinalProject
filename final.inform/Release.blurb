@@ -1,0 +1,62 @@
+! Blurb file created by Inform Inform 10.1.2 (build )
+
+status "C:\Program Files\Inform\Internal\HTML\CblorbModel.html" "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.inform\Build\StatusCblorb.html"
+
+
+! Identification
+
+project folder "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.inform"
+release to "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Release"
+
+! Blorb instructions
+
+storyfile leafname "Not a Fairy Tale.gblorb"
+storyfile "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.inform\Build\output.ulx" include
+ifiction "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.inform\Metadata.iFiction" include
+cover "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Cover.jpg"
+picture 1 "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Cover.jpg"
+
+! Placeholder variables
+
+placeholder [IFID] = "48D5D249-8AFA-41D0-A63D-CB7399B8C72D"
+placeholder [RELEASE] = "2"
+placeholder [YEAR] = "2025"
+placeholder [TITLE] = "Not a Fairy Tale"
+placeholder [AUTHOR] = "Casey Alton Marshall"
+placeholder [BLURB] = "The Princess of the planet Arkonkia has been abducted. Space pirates assault and overrun the Federation's expedition fleet sent to save her. You manage to escape, but your pod crashes and everyone else in there has perished, leaving you alone as if in a desert region of a nearby planet. Fortunately the kidnapper base of operations, where the princess is known to be imprisoned, is only a few kilometers away. But it is not like you can just walk in there and get the princess. Also you have no idea how you two will be getting home.<br/>Give a thanks to Chat GPI for the cover art and (for all their troubles) a even larger thanks to all the artists who art Open AI uses to train it. Though I did edited it a bit."
+
+! Other material to release
+
+ifiction
+auxiliary "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Walkthrough.txt" "A walkthrough" "--"
+auxiliary "C:\Program Files\Inform\Internal\Miscellany\Postcard.pdf" "IF Postcard" "--"
+placeholder [OTHERCREDITS] = "The postcard was written by Andrew Plotkin and designed by Lea Albaugh."
+
+! Website instructions
+
+placeholder [ENCODEDSTORYFILE] = "Not a Fairy Tale.gblorb.js"
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Templates"
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Templates"
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Templates"
+template path "C:\Program Files\Inform\Internal\Templates"
+placeholder [INTERPRETERSCRIPTS] = " "
+interpreter "Quixe" "g"
+base64 "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.inform\Build\output.ulx" to "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Release\interpreter\Not a Fairy Tale.gblorb.js"
+
+! Website instructions
+
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Templates"
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Projects\final.materials\Templates"
+template path "C:\Users\jmcma\OneDrive\Documents\Inform\Templates"
+template path "C:\Program Files\Inform\Internal\Templates"
+css
+website "Standard"
+status instruction ||&nbsp;<a href="source:story.ni#line7"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line8"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line10"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line11"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line12"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with the introductory booklet'&nbsp;<a href=inform:/doc402.html><img border=0 src=inform:/doc_images/help.png></a>||
